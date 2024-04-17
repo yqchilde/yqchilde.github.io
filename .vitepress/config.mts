@@ -8,12 +8,20 @@ export default defineConfig({
   lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    editLink: {
+      pattern: 'https://github.com/yqchilde/MyNewBlog/edit/main/:path',
+      text: '在 GitHub 上编辑此页面'
+    },
     lastUpdated: {
       text: '最后更新于',
       formatOptions: {
-        dateStyle: 'full',
+        dateStyle: 'short',
         timeStyle: 'medium'
       }
+    },
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
     },
     search: {
       provider: 'local'
