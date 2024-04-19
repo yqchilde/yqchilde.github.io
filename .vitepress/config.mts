@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
-import { themeConfig } from './config/theme';
-import { metaData } from './config/metadata';
-import { markdown } from './config/markdown';
+import { themeConfig } from './config.theme';
+import { metaData } from './config.metadata';
+import { markdown } from './config.markdown';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -13,18 +13,23 @@ export default defineConfig({
   // 最后更新时间
   lastUpdated: true,
 
+  // 简洁的url
+  cleanUrls: true,
+
   // 主题配置
   themeConfig,
 
   // markdown配置
   markdown: markdown,
 
-  // 过滤自定义元素
-  // vue: {
-  //   template: {
-  //     compilerOptions: {
-  //       isCustomElement: (tag) => customElements.includes(tag),
-  //     },
-  //   },
-  // },
+  // 路由重写
+  rewrites: {
+    ":postsdir/:categorie/:dd/:title/README.md": ":postsdir/:categorie/:title.md",
+    ":pagesdir/:title.md": ":title.md",
+  },
+
+  srcExclude: [
+    "./.github/",
+    "./README.md",
+  ],
 })

@@ -1,22 +1,4 @@
 /**
- * 格式化时间
- *
- * @param date 待格式化时间
- * @returns 格式化后的时间(YYYY/MM/dd hh:mm:ss)
- */
-export function formatDate(date: string) {
-    const formatDate = new Date(date);
-    const year = formatDate.getUTCFullYear().toString().padStart(4, '0');
-    const month = (formatDate.getUTCMonth() + 1).toString().padStart(2, '0');
-    const day = formatDate.getUTCDate().toString().padStart(2, '0');
-    const hours = formatDate.getUTCHours().toString().padStart(2, '0');
-    const minutes = formatDate.getUTCMinutes().toString().padStart(2, '0');
-    const seconds = formatDate.getUTCSeconds().toString().padStart(2, '0');
-
-    return `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
-}
-
-/**
  * 获取 URL 路径中的指定参数
  *
  * @param paramName 参数名
