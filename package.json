@@ -13,6 +13,7 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
+    "@giscus/vue": "^3.0.0",
     "@mdit-vue/shared": "^2.1.2",
     "blueimp-md5": "^2.19.0",
     "dayjs": "^1.11.10",

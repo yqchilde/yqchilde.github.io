@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     ArticleMetadata: typeof import('./.vitepress/theme/components/ArticleMetadata.vue')['default']
     ATag: typeof import('@arco-design/web-vue')['Tag']
+    Comment: typeof import('./.vitepress/theme/components/comment.vue')['default']
     IconShareAlt: typeof import('@arco-design/web-vue/es/icon')['IconShareAlt']
     IconTrophy: typeof import('@arco-design/web-vue/es/icon')['IconTrophy']
     MNavLink: typeof import('./.vitepress/theme/components/MNavLink.vue')['default']

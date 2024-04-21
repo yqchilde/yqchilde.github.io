@@ -3,6 +3,7 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import { useData, EnhanceAppContext } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import comment from "./components/comment.vue"
 import './styles/index.scss'
 
 export default {
@@ -19,6 +20,7 @@ export default {
 
     return h(DefaultTheme.Layout, props, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
+      "doc-after": () => h(comment),
     })
   },
   // enhanceApp(ctx) {

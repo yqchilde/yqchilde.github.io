@@ -15,5 +15,5 @@ export default defineConfig({
         alias: {
             'mermaid': 'mermaid/dist/mermaid.esm.mjs',
         },
-    },
+    }
 });
