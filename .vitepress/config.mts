@@ -1,7 +1,8 @@
-import { defineConfig } from 'vitepress';
-import { themeConfig } from './config.theme';
-import { metaData } from './config.metadata';
-import { markdown } from './config.markdown';
+import { defineConfig } from 'vitepress'
+import { nav } from './config/nav'
+import { sidebar } from './config/sidebar'
+import { markdown } from './config/markdown'
+import { metaData } from './config/metadata'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -16,20 +17,60 @@ export default defineConfig({
   // 简洁的url
   cleanUrls: true,
 
-  // 主题配置
-  themeConfig,
+  // 主题配置 https://vitepress.dev/reference/default-theme-config
+  themeConfig: {
+    nav: nav,
+    sidebar: sidebar,
+    // sidebar,
+
+    outline: {
+      label: '页面导航',
+      level: 'deep'
+    },
+    editLink: {
+      pattern: 'https://github.com/yqchilde/MyNewBlog/edit/main/:path',
+      text: '不妥之处，敬请雅正'
+    },
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'medium'
+      }
+    },
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    },
+    search: {
+      provider: 'local'
+    },
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/yqchilde' }
+    ],
+    footer: {
+      copyright: 'Copyright © 2019-2024 程序员YY | CC BY-NC 4.0 |  <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">晋ICP备18003223号-2</a>'
+    },
+    // @ts-ignore
+    articleMetadataConfig: {
+      author: 'YY', // 文章全局默认作者名称
+      authorLink: '/about', // 点击作者名时默认跳转的链接
+    },
+  },
 
   // markdown配置
   markdown: markdown,
 
   // 路由重写
   rewrites: {
-    ":postsdir/:categorie/:dd/:title/README.md": ":postsdir/:categorie/:title.md",
-    ":pagesdir/:title.md": ":title.md",
+    'posts/:categorie/:yyyy/:title/README.md': ':categorie/:yyyy/:title.md',
+    'posts/:categorie/:type/index.md': ':categorie/:type.md',
+    'posts/:categorie/index.md': ':categorie.md',
+    'pages/:categorie/index.md': ':categorie.md'
   },
 
   srcExclude: [
-    "./.github/",
-    "./README.md",
+    './.github/',
+    './README.md',
   ],
 })
