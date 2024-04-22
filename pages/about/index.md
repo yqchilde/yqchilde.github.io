@@ -3,6 +3,7 @@ title: 关于博客
 outline: false
 showArticleMetadata: false
 editLink: false
+lastUpdated: false
 ---
 
 # 博主介绍
