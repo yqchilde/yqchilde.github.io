@@ -11,7 +11,6 @@ export const head: HeadConfig[] = [
   ['meta', { name: 'baidu-site-verification', content: 'codeva-a9OBeZwEU6' }],
   ['link', { rel: 'apple-touch-icon', href: '/favicon.ico' }],
   ['link', { rel: 'mask-icon', href: '/favicon.ico', color: '#3eaf7c' }],
-  ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
   [
     'script',
     { src: isDevelopment ? '' : 'https://hm.baidu.com/hm.js?9327590ef57d577af3cebe5a982d84b4' }
