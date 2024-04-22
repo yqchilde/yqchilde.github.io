@@ -8,6 +8,8 @@ on:
     paths:
       - 'pages/**'
       - 'package.json'
+permissions: 
+  contents: write
 
 env:
   TZ: Asia/Shanghai
