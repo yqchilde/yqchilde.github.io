@@ -120,3 +120,13 @@ table {
 .dark .vp-doc .custom-block a {
     transition: color 0.25s;
 }
+
+/* 特殊配置 */
+/* 侧边栏标题隐藏单行文本溢出 */
+.VPSidebar .items p {
+    display: inline-block;
+    width: calc(var(--vp-sidebar-width) - 100px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
