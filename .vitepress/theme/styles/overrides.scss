@@ -1,5 +1,21 @@
 /***** vitepress 样式覆盖 ******/
 
+body {
+    font-size: 16px !important;
+    font-family: var(--vp-font-family-base) !important;
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: var(--vp-font-family-mono) !important;
+}
+
+.VPDoc .content-container img {
+    border-radius: 5px;
+}
+
 /* 大屏大一点 */
 @media (min-width: 1440px) {
     .VPDoc.has-aside .content-container.content-container {

@@ -1,6 +1,7 @@
 import type { MarkdownOptions } from 'vitepress';
 
 export const markdown: MarkdownOptions = {
+    lineNumbers: true,
     config: (md) => {
         md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
             let htmlResult = slf.renderToken(tokens, idx, options);
