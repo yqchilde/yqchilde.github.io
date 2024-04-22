@@ -27,7 +27,6 @@ export default defineConfig({
   themeConfig: {
     nav: nav,
     sidebar: sidebar,
-    // algolia: algolia,
 
     logo: {
       light: '/logo_light.svg',
@@ -54,7 +53,9 @@ export default defineConfig({
       next: '下一篇'
     },
     search: {
-      provider: 'local'
+      // provider: 'local'
+      provider: 'algolia',
+      options: algolia,
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/yqchilde' }
