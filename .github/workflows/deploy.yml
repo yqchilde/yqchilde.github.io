@@ -1,0 +1,40 @@
+name: Build And Deploy Github Page
+
+on:
+  workflow_dispatch:
+  push:
+    branches: 
+      - main
+    paths:
+      - 'pages/**'
+      - 'package.json'
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with: 
+          persist-credentials: false
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Build
+        run: npm i && npm run docs:build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          REPOSITORY_NAME: yqchilde/yy-notes
+          BRANCH: gh-pages
+          FOLDER: dist
