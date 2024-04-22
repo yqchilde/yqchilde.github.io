@@ -21,7 +21,10 @@ export default defineConfig({
   themeConfig: {
     nav: nav,
     sidebar: sidebar,
-    // sidebar,
+    logo: {
+      light: '/logo_light.svg',
+      dark: '/logo_night.svg'
+    },
 
     outline: {
       label: '页面导航',
