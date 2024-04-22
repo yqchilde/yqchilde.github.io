@@ -27,7 +27,7 @@ export default defineConfig({
   themeConfig: {
     nav: nav,
     sidebar: sidebar,
-    algolia: algolia,
+    // algolia: algolia,
 
     logo: {
       light: '/logo_light.svg',
