@@ -7,11 +7,13 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AImagePreviewGroup: typeof import('@arco-design/web-vue')['ImagePreviewGroup']
     ArticleMetadata: typeof import('./.vitepress/theme/components/ArticleMetadata.vue')['default']
     ATag: typeof import('@arco-design/web-vue')['Tag']
     Comment: typeof import('./.vitepress/theme/components/comment.vue')['default']
     IconShareAlt: typeof import('@arco-design/web-vue/es/icon')['IconShareAlt']
     IconTrophy: typeof import('@arco-design/web-vue/es/icon')['IconTrophy']
+    ImageViewer: typeof import('./.vitepress/theme/components/imageViewer.vue')['default']
     MNavLink: typeof import('./.vitepress/theme/components/MNavLink.vue')['default']
     MNavLinks: typeof import('./.vitepress/theme/components/MNavLinks.vue')['default']
   }

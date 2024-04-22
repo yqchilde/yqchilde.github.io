@@ -3,7 +3,8 @@ import { h, watch } from 'vue'
 import type { Theme } from 'vitepress'
 import { useData, EnhanceAppContext } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import comment from "./components/comment.vue"
+import comment from './components/comment.vue'
+import imageViewer from './components/imageViewer.vue'
 
 import './styles/index.scss'
 
@@ -43,6 +44,7 @@ export default {
     return h(DefaultTheme.Layout, props, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       "doc-after": () => h(comment),
+      "doc-bottom": () => h(imageViewer),
     })
   },
   // enhanceApp(ctx) {
