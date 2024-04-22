@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { head } from './config/head'
 import { nav } from './config/nav'
 import { sidebar } from './config/sidebar'
 import { markdown } from './config/markdown'
@@ -7,6 +8,7 @@ import { metaData } from './config/metadata'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   // 基础配置
+  head: head,
   lang: metaData.lang,
   title: metaData.title,
   description: metaData.description,
