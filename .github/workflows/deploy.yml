@@ -1,4 +1,4 @@
-name: Build And Deploy Github Page
+name: Build And Deploy
 
 on:
   workflow_dispatch:
@@ -9,11 +9,14 @@ on:
       - 'pages/**'
       - 'package.json'
       - '.vitepress/**'
+
 permissions: 
   contents: write
 
 env:
   TZ: Asia/Shanghai
+  VITE_GISCUS_REPO_ID: ${{ secrets.ACCESS_TOKEN }}
+  VITE_GISCUS_CATEGORY_ID: ${{ secrets.ACCESS_TOKEN }}
 
 jobs:
   build:
@@ -21,7 +24,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with: 
           persist-credentials: false
 
@@ -32,7 +35,7 @@ jobs:
           cache: 'npm'
 
       - name: Build
-        run: npm i && npm run docs:build
+        run: npm i && npm run docs:build-github
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
