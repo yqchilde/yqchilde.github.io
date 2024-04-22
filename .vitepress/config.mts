@@ -20,6 +20,9 @@ export default defineConfig({
   // 简洁的url
   cleanUrls: true,
 
+  // 输出目录
+  outDir: '.',
+
   // 主题配置 https://vitepress.dev/reference/default-theme-config
   themeConfig: {
     nav: nav,
