@@ -1,5 +1,5 @@
 // https://vitepress.dev/guide/custom-theme
-import { h } from 'vue'
+import { h, watch } from 'vue'
 import type { Theme } from 'vitepress'
 import { useData, EnhanceAppContext } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
@@ -10,7 +10,6 @@ export default {
   extends: DefaultTheme,
   Layout: () => {
     const props: Record<string, any> = {}
-    // 获取 frontmatter
     const { frontmatter } = useData()
 
     /* 添加自定义 class */
@@ -29,8 +28,15 @@ export default {
   //     ctx.app.component('ArticleMetadata', ArticleMetadata);
   // },
 
-  enhanceApp({ app }) {
-  },
+  enhanceApp({ app, router }: EnhanceAppContext) {
+    if (typeof window !== 'undefined') {
+      watch(
+        () => router.route.data.relativePath,
+        () => updateHomePageStyle(location.pathname === '/'),
+        { immediate: true }
+      )
+    }
+  }
 
   // Layout: () => {
   //   return h(DefaultTheme.Layout, null, {
@@ -41,3 +47,38 @@ export default {
   //   // ...
   // }
 } satisfies Theme
+
+if (typeof window !== 'undefined') {
+  // detect browser, add to class for conditional styling
+  const browser = navigator.userAgent.toLowerCase()
+  if (browser.includes('chrome')) {
+    document.documentElement.classList.add('browser-chrome')
+  } else if (browser.includes('firefox')) {
+    document.documentElement.classList.add('browser-firefox')
+  } else if (browser.includes('safari')) {
+    document.documentElement.classList.add('browser-safari')
+  }
+}
+
+let homePageStyle: HTMLStyleElement | undefined
+
+// Speed up the rainbow animation on home page
+function updateHomePageStyle(value: boolean) {
+  if (value) {
+    if (homePageStyle) return
+
+    homePageStyle = document.createElement('style')
+    homePageStyle.innerHTML = `
+    :root {
+      animation: rainbow 12s linear infinite;
+    }`
+    // console.log(homePageStyle);
+    document.body.appendChild(homePageStyle)
+  } else {
+    // console.log(111);
+    if (!homePageStyle) return
+
+    homePageStyle.remove()
+    homePageStyle = undefined
+  }
+}
