@@ -20,9 +20,6 @@ export default defineConfig({
   // 简洁的url
   cleanUrls: true,
 
-  // 基础路径
-  base: process.env.APP_BASE_PATH || '/',
-
   // 输出目录
   outDir: './dist',
 

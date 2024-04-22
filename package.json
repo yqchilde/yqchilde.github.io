@@ -8,16 +8,14 @@
     "vitepress": "^1.1.0"
   },
   "scripts": {
-    "docs:dev": "cross-env NODE_ENV=development vitepress dev --host",
+    "docs:dev": "vitepress dev --host",
     "docs:build": "vitepress build",
-    "docs:build-github": "cross-env APP_BASE_PATH=/yy-notes/ npm run docs:build",
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
     "@giscus/vue": "^3.0.0",
     "@mdit-vue/shared": "^2.1.2",
     "blueimp-md5": "^2.19.0",
-    "cross-env": "^7.0.3",
     "dayjs": "^1.11.10",
     "gray-matter": "^4.0.3"
   }
