@@ -22,4 +22,4 @@ jobs:
             APPLICATION_ID: ${{ secrets.ALGOLIA_APP_ID }}
             ADMIN_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
             FILE_PATH: 'crawlerConfig.json'
-            INDEX_NAME: "index.zh-cn"
+            INDEX_NAME: "search"
