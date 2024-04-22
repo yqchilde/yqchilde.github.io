@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AImagePreviewGroup: typeof import('@arco-design/web-vue')['ImagePreviewGroup']
+    ArcoDark: typeof import('./.vitepress/theme/components/arcoDark.vue')['default']
     ArticleMetadata: typeof import('./.vitepress/theme/components/articleMetadata.vue')['default']
     ATag: typeof import('@arco-design/web-vue')['Tag']
     Comment: typeof import('./.vitepress/theme/components/comment.vue')['default']

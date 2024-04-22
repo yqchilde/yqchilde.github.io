@@ -1,14 +1,16 @@
 <template>
     <div class="image-viewer">
-        <a-image-preview-group v-model:visible="show" infinite :srcList="previewImageInfo.list"
-            :default-current="previewImageInfo.idx" :defaultScale="0.65" :key="previewImageInfo.idx"
-            @close="show = false" />
+        <ClientOnly>
+            <a-image-preview-group v-model:visible="show" infinite :srcList="previewImageInfo.list"
+                :default-current="previewImageInfo.idx" :defaultScale="0.65" :key="previewImageInfo.idx"
+                @close="show = false" />
+            <arco-dark />
+        </ClientOnly>
     </div>
 </template>
 <script setup lang="ts">
 import { onMounted, onUnmounted, reactive, ref } from 'vue'
-import { useData } from "vitepress";
-import { watch } from "vue";
+import arcoDark from './arcoDark.vue'
 
 const show = ref(false)
 const previewImageInfo = reactive<{ url: string; list: string[]; idx: number }>(
@@ -18,21 +20,6 @@ const previewImageInfo = reactive<{ url: string; list: string[]; idx: number }>(
         idx: 0
     }
 )
-
-const { isDark } = useData();
-watch(
-    isDark,
-    () => {
-        if (isDark.value) {
-            document.body.setAttribute('arco-theme', 'dark');
-        } else {
-            document.body.removeAttribute('arco-theme');
-        }
-    },
-    {
-        immediate: true,
-    }
-);
 
 function previewImage(e: Event) {
     const target = e.target as HTMLElement
@@ -48,9 +35,6 @@ function previewImage(e: Event) {
         previewImageInfo.url = url!
         previewImageInfo.list = urls
         previewImageInfo.idx = idx
-
-        console.log(previewImageInfo);
-
 
         // 兼容点击main之外的图片
         if (idx === -1 && url) {
