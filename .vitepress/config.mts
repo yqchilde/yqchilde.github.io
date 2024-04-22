@@ -21,7 +21,7 @@ export default defineConfig({
   cleanUrls: true,
 
   // 输出目录
-  outDir: '.',
+  outDir: './dist',
 
   // 主题配置 https://vitepress.dev/reference/default-theme-config
   themeConfig: {
