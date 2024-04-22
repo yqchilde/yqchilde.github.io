@@ -9,7 +9,6 @@ on:
       - 'pages/**'
       - 'package.json'
       - '.vitepress/**'
-
 permissions: 
   contents: write
 
