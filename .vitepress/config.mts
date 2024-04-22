@@ -4,6 +4,7 @@ import { nav } from './config/nav'
 import { sidebar } from './config/sidebar'
 import { markdown } from './config/markdown'
 import { metaData } from './config/metadata'
+import { algolia } from './config/algolia'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -23,6 +24,8 @@ export default defineConfig({
   themeConfig: {
     nav: nav,
     sidebar: sidebar,
+    algolia: algolia,
+
     logo: {
       light: '/logo_light.svg',
       dark: '/logo_night.svg'
