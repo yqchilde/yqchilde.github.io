@@ -17,7 +17,7 @@ const { isDark } = useData();
 
 // params generate in https://giscus.app/zh-CN
 const giscusConfig: GiscusProps = reactive({
-	repo: "yqchilde/yy-notes",
+	repo: "yqchilde/yqchilde.github.io",
 	repoId: import.meta.env.VITE_GISCUS_REPO_ID,
 	category: "Q&A",
 	categoryId: import.meta.env.VITE_GISCUS_CATEGORY_ID,
