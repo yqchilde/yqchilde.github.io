@@ -50,7 +50,7 @@ jobs:
     steps:
       - name: Algolia Crawler Automatic Crawl
         uses: algolia/algoliasearch-crawler-github-actions@v1.1.0
-        env:
+        with:
           github-token: ${{ secrets.ACCESS_TOKEN }}
           crawler-name: 'yqqy'
           crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
