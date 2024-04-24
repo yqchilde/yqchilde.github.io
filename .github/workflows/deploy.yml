@@ -19,9 +19,8 @@ env:
   VITE_GISCUS_CATEGORY_ID: ${{ secrets.VITE_GISCUS_CATEGORY_ID }}
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,3 +43,17 @@ jobs:
           REPOSITORY_NAME: yqchilde/yy-notes
           BRANCH: gh-pages
           FOLDER: dist
+
+  algolia:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Algolia Crawler Automatic Crawl
+        need: deploy
+        uses: algolia/algoliasearch-crawler-github-actions@v1.1.0
+        env:
+          crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
+          crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
+          crawler-name: 'yqqy'
+          algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
+          algolia-api-key: ${{ secrets.ALGOLIA_API_KEY }}
+          site-url: 'https://yqqy.top'
