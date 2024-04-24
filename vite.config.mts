@@ -15,5 +15,18 @@ export default defineConfig({
         alias: {
             'mermaid': 'mermaid/dist/mermaid.esm.mjs',
         },
+    },
+    build: {
+        chunkSizeWarningLimit: 1700,
+        rollupOptions: {
+            output: {
+                manualChunks(id) {
+                    const HugeLibraries = ["@mui", "xlsx", "xlsx-js-style", "jodit-react", "exceljs"]; // modify as required based on libraries in use
+                    if (HugeLibraries.some((libName) => id.includes(`node_modules/${libName}`))) {
+                        return id.toString().split("node_modules/")[1].split("/")[0].toString();
+                    }
+                },
+            }
+        }
     }
 });
