@@ -31,20 +31,18 @@ const giscusConfig: GiscusProps = reactive({
 	loading: "lazy",
 });
 
-const showComment = frontmatter.value?.showComment ? ref(true) : ref(false);
-
-// watch(
-// 	() => route.path,
-// 	() => {
-// 		showComment.value = false;
-// 		nextTick(() => {
-// 			showComment.value = true;
-// 		})
-// 	},
-// 	{
-// 		immediate: true,
-// 	}
-// );
+const showComment = ref(true);
+watch(
+	() => route.path,
+	() => {
+		nextTick(()=>{
+			showComment.value = frontmatter.value?.showComment !== undefined ? frontmatter.value.showComment : true;
+		});	
+	},
+	{
+		immediate: true,
+	}
+);
 
 </script>
 <style>

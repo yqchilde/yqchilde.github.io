@@ -39,3 +39,11 @@ func main() {
 ## 声明
 
 本博客所有内容采用[知识共享署名-非商业性使用-相同方式共享4.0 国际许可协议进行许可](https://creativecommons.org/licenses/by-nc-sa/4.0/)。
+
+## 特别鸣谢
+
+本站参考了以下博主的设计：
+
+* [https://blog.charles7c.top](https://blog.charles7c.top)
+* [https://notes.fe-mm.com](https://notes.fe-mm.com)
+* [https://justin3go.com](https://justin3go.com)
