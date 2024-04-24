@@ -1,10 +1,9 @@
-import type { DefaultTheme } from 'vitepress';
-import fs from 'fs';
-import fg from 'fast-glob';
-import matter from 'gray-matter';
+import type { DefaultTheme } from 'vitepress'
+import fs from 'fs'
+import fg from 'fast-glob'
+import matter from 'gray-matter'
 const sync = fg.sync;
 
-// export const sidebar: DefaultTheme.Config['sidebar'] = {
 export const sidebar: DefaultTheme.Sidebar = {
     '/blog': getItemsByDate('posts/blog'),
     '/review': getItemsByCategory('posts/review'),

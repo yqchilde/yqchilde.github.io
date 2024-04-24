@@ -2,7 +2,6 @@
 title: "Golang编译应用通过Github Release实现检测覆盖更新"
 description: ""
 date: 2021-04-21 22:44:20
-categories: ["后端"]
 tags: ["Golang"]
 ---
 

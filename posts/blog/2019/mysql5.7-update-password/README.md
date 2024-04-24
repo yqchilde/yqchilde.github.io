@@ -2,7 +2,6 @@
 title: "MySQL5.7修改root密码"
 description: "错误的原因是 5.7版本下的mysql数据库下已经没有password这个字段了，password字段改成了authentication_string"
 date: 2019-10-06 04:17:54
-categories: ["奇技淫巧"]
 tags: ["MySQL"]
 ---
 

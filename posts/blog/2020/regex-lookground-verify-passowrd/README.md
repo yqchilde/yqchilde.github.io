@@ -2,7 +2,6 @@
 title: "Golang实现一个简单的密码强度验证"
 description: "了解正则表达式环视的使用方法，知道Golang为什么不支持该功能，实现一个简单的密码强度验证。"
 date: 2020-09-15 23:02:44
-categories: ["奇技淫巧"]
 tags: ["Golang"]
 ---
 

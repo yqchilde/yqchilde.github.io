@@ -2,7 +2,6 @@
 title: "Golang的Slice扩容机制"
 description: "写了很久的slice却没有去想过他的扩容机制，近期面试，去了解了一下，这次也算是彻底明白了，之前只是简单的看了看文章"
 date: 2020-05-08 15:48:29
-categories: ["后端"]
 tags: ["Golang"]
 ---
 

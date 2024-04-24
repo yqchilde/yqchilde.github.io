@@ -2,7 +2,6 @@
 title: "在算能盒子 (BMNN) 上使用gocv"
 description: "本文记录了在算能盒子 (BMNN) 上使用gocv的过程，本文将描述使用期间走过的坑，以及如何解决这些坑。"
 date: 2022-04-19 17:29:34
-categories: ["后端"]
 tags: ["Golang"]
 ---
 

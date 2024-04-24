@@ -2,7 +2,6 @@
 title: "Go的template模板关于range换行和crontab的简单正则表达式"
 description: ""
 date: 2021-04-04 17:39:04
-categories: ["奇技淫巧"]
 tags: ["Golang"]
 ---
 

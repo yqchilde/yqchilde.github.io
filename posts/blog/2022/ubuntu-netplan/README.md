@@ -2,7 +2,6 @@
 title: "Ubuntu 下关于 Netplan 的一次报错"
 description: "一次错把 netplan 当做 netplan.io 使用时发生的报错。"
 date: 2022-04-17 19:30:38
-categories: ["奇技淫巧"]
 tags: ["Ubuntu"]
 ---
 

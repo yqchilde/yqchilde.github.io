@@ -2,7 +2,6 @@
 title: "Nginx常用配置"
 description: "记录一些Nginx常用配置项及说明。"
 date: 2021-11-09 17:31:11
-categories: ["奇技淫巧"]
 tags: ["Nginx"]
 ---
 

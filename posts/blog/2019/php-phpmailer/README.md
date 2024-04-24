@@ -2,7 +2,6 @@
 title: "PHPMailer6.0.7如何在类中被调用"
 description: "在写发送邮件时发现移植过来的PHPMailer是旧版的（是没有namespace）的，在后面的版本官方才更新过来，于是我在github下载到最新的版本准备写一个发送邮件"
 date: 2019-09-19 12:34:09
-categories: ["后端"]
 tags: ["PHP"]
 ---
 

@@ -2,7 +2,6 @@
 title: "在Ubuntu上安装指定版本的Go语言"
 description: "在ubuntu系统上直接使用apt-get下载下来的go版本是1.10.4，相对比较久远，本文记载如何安装指定版本的go"
 date: 2021-11-29 10:25:30
-categories: ["奇技淫巧"]
 tags: ["Ubuntu", "Golang"]
 ---
 

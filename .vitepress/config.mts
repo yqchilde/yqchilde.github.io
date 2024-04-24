@@ -58,7 +58,7 @@ export default defineConfig({
       options: algolia,
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yqchilde' }
+      { icon: 'github', link: 'https://github.com/yqchilde/yqchilde.github.io' }
     ],
     footer: {
       copyright: 'Copyright © 2019-2024 程序员YY | CC BY-NC 4.0 |  <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">晋ICP备18003223号-2</a>'

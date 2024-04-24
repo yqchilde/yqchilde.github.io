@@ -2,7 +2,6 @@
 title: "在Mac上彻底卸载Docker"
 description: "当我从 Intel 芯片的 Mac 使用迁移助理迁移到 M1 芯片的 Mac 时，docker desktop 打不开了（尝试了很多次卸载重装M1版本的 docker desktop ），这是因为卸载 docker desktop 时没有卸载干净，即使是使用三方工具，如 sensei 工具卸载。这个文章就是为了解决这个问题。"
 date: 2022-03-08 15:12:47
-categories: ["奇技淫巧"]
 tags: ["Docker"]
 ---
 

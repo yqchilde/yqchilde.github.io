@@ -45,23 +45,6 @@
                 {{ dayjs(date).subtract(8, 'hour').format('YYYY/MM/DD HH:mm:ss') }}
             </time>
         </div>
-        <div class="meta-item" v-if="showCategory">
-            <span class="meta-icon category">
-                <svg role="img" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                    <title>所属分类</title>
-                    <path
-                        d="M928 444H820V330.4c0-17.7-14.3-32-32-32H473L355.7 186.2a8.15 8.15 0 0 0-5.5-2.2H96c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h698c13 0 24.8-7.9 29.7-20l134-332c1.5-3.8 2.3-7.9 2.3-12 0-17.7-14.3-32-32-32zM136 256h188.5l119.6 114.4H748V444H238c-13 0-24.8 7.9-29.7 20L136 643.2V256z m635.3 512H159l103.3-256h612.4L771.3 768z">
-                    </path>
-                </svg>
-            </span>
-            <span class="meta-content">
-                <span v-for="(category, index) in categories" :key="index">
-                    <a href="javascript:void(0);" @click="goToLink('/archives', 'category', category)" target="_self"
-                        :title="category">{{ category }}</a>
-                    <span v-if="index != categories.length - 1">, </span>
-                </span>
-            </span>
-        </div>
         <div class="meta-item tag">
             <span class="meta-icon tag">
                 <svg role="img" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +56,7 @@
             </span>
             <span class="meta-content">
                 <span v-for="(tag, index) in tags" :key="index">
-                    <a href="javascript:void(0);" @click="goToLink('/archives', 'tag', tag)" target="_self"
+                    <a href="javascript:void(0);" @click="goToLink('/blog', 'tag', tag)" target="_self"
                         :title="tag">{{ tag
                         }}</a>
                     <span v-if="index != tags.length - 1">, </span>
@@ -86,7 +69,6 @@
 <script lang="ts" setup>
 import { reactive, toRefs, onMounted } from 'vue';
 import { useData } from 'vitepress';
-import md5 from 'blueimp-md5';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -98,10 +80,6 @@ dayjs.locale('zh-cn');
 // 定义文章属性
 const props = defineProps({
     article: Object,
-    showCategory: {
-        type: Boolean,
-        default: true,
-    },
 });
 
 // 初始化文章元数据信息
@@ -111,12 +89,9 @@ const data = reactive({
     author: props.article?.author ?? theme.value.articleMetadataConfig.author,
     authorLink: props.article?.authorLink ?? theme.value.articleMetadataConfig.authorLink,
     date: new Date(props.article?.date),
-    categories: props.article?.categories ?? [],
     tags: props.article?.tags ?? [],
-    showCategory: props.showCategory
 });
-const { isOriginal, author, authorLink, date, categories, tags, showCategory } = toRefs(data);
-// const { isOriginal, author, authorLink, showViewCount, viewCount, date, toDate, categories, tags, showCategory } = toRefs(data);
+const { isOriginal, author, authorLink, date, tags } = toRefs(data);
 </script>
 
 <style scoped>

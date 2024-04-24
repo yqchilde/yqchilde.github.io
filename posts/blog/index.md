@@ -1,5 +1,12 @@
 ---
 showArticleMetadata: false
+showComment: false
 ---
 
-# 这里是frontend blog
+# 博客笔记
+
+::: tip 😄
+日常记录，零零散散啥都记
+:::
+
+<clientOnly><Tag /></clientOnly>

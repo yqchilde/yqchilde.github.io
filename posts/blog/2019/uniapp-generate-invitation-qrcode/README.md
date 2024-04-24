@@ -2,7 +2,6 @@
 title: "Uni-App生成邀请二维码"
 description: "介绍了如何用Uni-App生成邀请二维码并画出来"
 date: 2019-07-22 14:36:55
-categories: ["前端"]
 tags: ["UniAPP"]
 ---
 

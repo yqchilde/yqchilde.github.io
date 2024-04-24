@@ -2,7 +2,6 @@
 title: "正确配置rocket-nginx，加速你的wordpress"
 description: "正确配置rocket-nginx，加速你的wordpress，前提是需要先获得`wp-rocket`插件，该插件是收费插件，如果有能力请支持正版，这里不提供下载地址，擅于利用搜索引擎或万能的某宝。本文是基于自己用宝塔配置rocket-nginx的教程，因为网上目前搜到的所有配置都是直接翻译github的README.md( 😒 )，不过还是推荐看最新的文档，没准啥时候就变动了，操作步骤如下"
 date: 2020-03-08 11:15:56
-categories: ["奇技淫巧"]
 tags: ["Wordpress"]
 ---
 

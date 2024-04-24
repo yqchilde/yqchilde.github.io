@@ -2,7 +2,6 @@
 title: "Golang实现进制计算两种方法"
 description: "Golang实现进制计算两种方法，逐位计算和位操作，了解丰富的math/big包"
 date: 2020-04-02 08:07:56
-categories: ["后端"]
 tags: ["Golang"]
 ---
 

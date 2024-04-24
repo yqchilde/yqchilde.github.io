@@ -2,7 +2,6 @@
 title: "GoModule添加gitlab私有仓库"
 description: "本篇记载了如何添加 gitlab 私有仓库到 go mod 中使用，并且可以使用 go get 命令获取到私有仓库的依赖。"
 date: 2022-04-17 22:38:34
-categories: ["奇技淫巧"]
 tags: ["Golang"]
 ---
 

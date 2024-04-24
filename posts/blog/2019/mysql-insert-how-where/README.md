@@ -2,7 +2,6 @@
 title: "MySQL中insert数据时怎么用where条件"
 description: "记录一下MySQL在做插入操作时怎么去指定条件"
 date: 2019-10-26 14:25:53
-categories: ["奇技淫巧"]
 tags: ["MySQL"]
 ---
 

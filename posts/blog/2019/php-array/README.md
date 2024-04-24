@@ -2,7 +2,6 @@
 title: "php多维数组降维记载"
 description: "php多维数组降维记载"
 date: 2019-08-20 07:47:23
-categories: ["后端"]
 tags: ["PHP"]
 ---
 

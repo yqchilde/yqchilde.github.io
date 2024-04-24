@@ -2,7 +2,6 @@
 title: "Uni-App之携带session请求"
 description: "记载一下uniapp携带session的请求"
 date: 2019-07-11 13:58:33
-categories: ["前端"]
 tags: ["UniAPP"]
 ---
 

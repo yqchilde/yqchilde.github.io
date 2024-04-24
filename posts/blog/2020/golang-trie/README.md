@@ -2,7 +2,6 @@
 title: "Golang实现简单Trie树"
 description: "Trie又称字典树，是N叉树的一种特殊形式。是一种存储大量字符串的树形数据结构，相当于`HashMap`，在存储单词中又比`HashMap`节省了很多的内存空间。`trie`树的根节点不存储内容，内容都在孩子节点上。"
 date: 2020-03-28 11:20:13
-categories: ["后端"]
 tags: ["Golang"]
 ---
 

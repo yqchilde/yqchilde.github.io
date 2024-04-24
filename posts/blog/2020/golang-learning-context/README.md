@@ -2,7 +2,6 @@
 title: "Golang的Context学习"
 description: "Context包是什么很强大的包，他可用户web处理多个goroutine数据间关系，亦可处理超时控制和上下文控制，总之，要好好理解一下了。"
 date: 2020-05-15 16:07:35
-categories: ["后端"]
 tags: ["Golang"]
 ---
 

@@ -2,7 +2,6 @@
 title: "php在foreach里面合并数组"
 description: "PHP如何在foreach中合并数组呢？"
 date: 2019-08-19 09:57:49
-categories: ["后端"]
 tags: ["PHP"]
 ---
 

@@ -2,7 +2,6 @@
 title: "Docker Compose简单配置Mysql Nginx挂载持久化"
 description: "通过docker-compose简单的配置一下mysql和nginx，并且挂载到一个文件夹。"
 date: 2021-02-11 17:05:43
-categories: ["奇技淫巧"]
 tags: ["Docker", "MySQL", "Nginx", "Redis"]
 ---
 

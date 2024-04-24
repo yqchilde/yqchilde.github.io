@@ -2,7 +2,6 @@
 title: "Golang的json序列化详解"
 description: "Golang解析Json数组的一些技巧，奇怪的知识又增加了！"
 date: 2020-05-16 13:41:00
-categories: ["后端"]
 tags: ["Golang"]
 ---
 

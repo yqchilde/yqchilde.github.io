@@ -2,7 +2,6 @@
 title: "Docker安装MySQL后无法登录"
 description: "用docker跑了一个mysql容器后，发现进入容器却无法成功登录，记录一下解决方案。"
 date: 2021-02-11 15:52:21
-categories: ["奇技淫巧"]
 tags: ["Docker", "MySQL"]
 ---
 

@@ -2,7 +2,6 @@
 title: "使用GitHub Actions部署Hugo到阿里云"
 description: "博客更换到了静态Hugo生成的网页，为了部署方便，所以使用GitHub Actions来自动化部署"
 date: 2020-08-30 19:58:27
-categories: ["奇技淫巧"]
 tags: ["Github Actions"]
 ---
 

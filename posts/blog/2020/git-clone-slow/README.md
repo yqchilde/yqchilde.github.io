@@ -2,7 +2,6 @@
 title: "Git设置代理解决git clone太慢的问题"
 description: "Git设置代理解决git clone太慢的问题"
 date: 2020-02-01 12:33:03
-categories: ["奇技淫巧"]
 tags: ["Git"]
 ---
 

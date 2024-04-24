@@ -2,7 +2,6 @@
 title: "MacOS-如何删除Free Space，使得APFS容器将Free Space占用"
 description: "折腾来折腾去又回到了windows，因为一块2k屏抛弃了体验良好的黑苹果，由于装了企业版，发现企业版不会带Microsoft Store，故查资料发现了解决方法，此文插眼记录。"
 date: 2020-11-08 18:40:25
-categories: ["奇技淫巧"]
 tags: ["Windows"]
 ---
 

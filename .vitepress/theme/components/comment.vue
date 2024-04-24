@@ -13,7 +13,7 @@ import { useData, useRoute } from 'vitepress'
 import Giscus, { type GiscusProps } from '@giscus/vue'
 
 const route = useRoute();
-const { isDark } = useData();
+const { isDark, frontmatter } = useData();
 
 // params generate in https://giscus.app/zh-CN
 const giscusConfig: GiscusProps = reactive({
@@ -31,19 +31,20 @@ const giscusConfig: GiscusProps = reactive({
 	loading: "lazy",
 });
 
-const showComment = ref(true);
-watch(
-	() => route.path,
-	() => {
-		showComment.value = false;
-		nextTick(() => {
-			showComment.value = true;
-		})
-	},
-	{
-		immediate: true,
-	}
-);
+const showComment = frontmatter.value?.showComment ? ref(true) : ref(false);
+
+// watch(
+// 	() => route.path,
+// 	() => {
+// 		showComment.value = false;
+// 		nextTick(() => {
+// 			showComment.value = true;
+// 		})
+// 	},
+// 	{
+// 		immediate: true,
+// 	}
+// );
 
 </script>
 <style>

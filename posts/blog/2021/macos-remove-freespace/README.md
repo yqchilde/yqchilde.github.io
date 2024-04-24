@@ -2,7 +2,6 @@
 title: "MacOS-如何删除Free Space，使得APFS容器将Free Space占用"
 description: "本文记载如果将一个APFS容器删除，并将与其剩余空间合并。"
 date: 2021-10-09 08:02:40
-categories: ["奇技淫巧"]
 tags: ["MacOS"]
 ---
 

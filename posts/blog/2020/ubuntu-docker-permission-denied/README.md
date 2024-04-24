@@ -2,7 +2,6 @@
 title: "Ubuntu启动Docker报没有权限"
 description: "解决Ubuntu启动Docker 'Got permission denied while trying to connect to the Docker daemon socket' 问题。"
 date: 2020-11-11 08:11:30
-categories: ["奇技淫巧"]
 tags: ["Ubuntu", "Docker"]
 ---
 

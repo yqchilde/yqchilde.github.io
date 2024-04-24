@@ -2,7 +2,6 @@
 title: "Uni-App的手势监听滑动"
 description: "官方文档上面只有说支持 `touchmove` 但是却没给一个demo，实现过程在这里了。"
 date: 2019-06-15 07:10:11
-categories: ["前端"]
 tags: ["UniAPP"]
 ---
 

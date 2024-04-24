@@ -7,8 +7,13 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ACard: typeof import('@arco-design/web-vue')['Card']
+    ACol: typeof import('@arco-design/web-vue')['Col']
     AImagePreviewGroup: typeof import('@arco-design/web-vue')['ImagePreviewGroup']
+    AList: typeof import('@arco-design/web-vue')['List']
+    AListItem: typeof import('@arco-design/web-vue')['ListItem']
     ArcoDark: typeof import('./.vitepress/theme/components/arcoDark.vue')['default']
+    ARow: typeof import('@arco-design/web-vue')['Row']
     ArticleMetadata: typeof import('./.vitepress/theme/components/articleMetadata.vue')['default']
     ATag: typeof import('@arco-design/web-vue')['Tag']
     Comment: typeof import('./.vitepress/theme/components/comment.vue')['default']
@@ -17,5 +22,7 @@ declare module 'vue' {
     ImageViewer: typeof import('./.vitepress/theme/components/imageViewer.vue')['default']
     MNavLink: typeof import('./.vitepress/theme/components/mNavLink.vue')['default']
     MNavLinks: typeof import('./.vitepress/theme/components/mNavLinks.vue')['default']
+    Tag: typeof import('./.vitepress/theme/components/tag.vue')['default']
+    WordCloud: typeof import('./.vitepress/theme/components/wordCloud.vue')['default']
   }
 }

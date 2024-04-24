@@ -2,7 +2,6 @@
 title: "Golang实现判断一个点是否在多边形中"
 description: "这是一道数字几何题，可以应用的领域有很多，比如GIS服务、区域服务等"
 date: 2021-11-25 08:34:13
-categories: ["奇技淫巧"]
 tags: ["Golang"]
 ---
 

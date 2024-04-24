@@ -2,7 +2,6 @@
 title: "解决win10的cmd命令行不转义ANSI序列（让cmd输出彩色字体）"
 description: "简单来说就是装了之后能在cmd中通过一些代码实现华丽的效果，比如改变字体颜色"
 date: 2020-01-11 10:26:10
-categories: ["奇技淫巧"]
 tags: ["Terminal"]
 ---
 

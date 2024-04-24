@@ -2,7 +2,6 @@
 title: "解决在 Apple M1 上使用 Parallels 安装 Windows 后无法使用 OpenVPN 的问题"
 description: "由于工作需要，我在 macOS 上安装 Windows，但是在 Windows 上却无法使用 OpenVPN。"
 date: 2022-04-18 15:03:51
-categories: ["奇技淫巧"]
 tags: ["MacOS"]
 ---
 

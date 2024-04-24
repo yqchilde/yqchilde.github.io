@@ -2,7 +2,6 @@
 title: "docker-compose使用env处理环境变量妙用"
 description: "记录在docker-compose中对环境变量抽离，使用env文件嵌套变量使用的方法。"
 date: 2021-03-13 12:49:58
-categories: ["奇技淫巧"]
 tags: ["Docker"]
 ---
 

@@ -2,7 +2,6 @@
 title: "Golang实现几种基本数据结构"
 description: "复习数据结构，使用Golang写一下"
 date: 2020-03-31 15:53:11
-categories: ["后端"]
 tags: ["Golang"]
 ---
 
