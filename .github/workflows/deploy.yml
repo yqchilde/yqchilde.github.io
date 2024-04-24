@@ -46,9 +46,9 @@ jobs:
 
   algolia:
     runs-on: ubuntu-latest
+    needs: deploy
     steps:
       - name: Algolia Crawler Automatic Crawl
-        needs: deploy
         uses: algolia/algoliasearch-crawler-github-actions@v1.1.0
         env:
           crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
