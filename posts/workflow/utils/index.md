@@ -1,8 +1,8 @@
 ---
-sort: 1
-title: 编程规范
+sort: 2
+title: 常用工具/方法
 showArticleMetadata: false
 showChapterCount: false
 ---
 
-# 这里是frontend style-guide
+# 常用工具/方法

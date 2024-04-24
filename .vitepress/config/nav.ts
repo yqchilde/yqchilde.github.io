@@ -7,7 +7,7 @@ export const nav: DefaultTheme.NavItem[] = [
     },
     {
         text: "后端物语",
-        activeMatch: '/review/',
+        activeMatch: '^/review',
         items: [
             { text: "Golang篇", link: "/review/golang" },
             { text: "Python篇", link: "/review/python" },
@@ -30,29 +30,22 @@ export const nav: DefaultTheme.NavItem[] = [
             },
             {
                 items: [
-                    { text: '常用工具库整理', link: '/workflow/css/spec' },
-                    { text: '常用正则整理', link: '/workflow/css/tricks' },
-                    { text: '常用片段整理', link: '/workflow/sass/' }
+                    { text: '常用正则整理', link: '/workflow/utils/regexp' },
+                    { text: '常用片段整理', link: '/workflow/utils/snippets' }
                 ]
             },
-            {
-                items: [
-                    { text: '命令行工具', link: '/workflow/css/spec' },
-                ]
-            },
-            {
-                items: [
-                    { text: 'Git 相关技巧', link: '/workflow/css/spec' },
-                    { text: 'Git 命令清单', link: '/workflow/css/tricks' },
-                ]
-            },
+            // {
+            //     items: [
+            //         { text: 'Git 命令清单', link: '/workflow/git/command' },
+            //     ]
+            // },
         ],
         activeMatch: '^/workflow'
     },
     {
         text: "博客",
         link: '/blog',
-        activeMatch: '/blog/',
+        activeMatch: '^/blog',
     },
     {
         text: '提效工具',
@@ -60,16 +53,10 @@ export const nav: DefaultTheme.NavItem[] = [
             {
                 text: '软件推荐与配置',
                 items: [
-                    { text: '多平台软件', link: '/efficiency/software/cross-platform' },
-                    { text: 'Mac 平台', link: '/efficiency/software/mac' },
-                    { text: 'Windows 平台', link: '/efficiency/software/windows' },
-                    { text: '浏览器设置与扩展', link: '/efficiency/software/browser' },
-                    { text: 'Visual Studio Code 配置', link: '/efficiency/software/vscode' },
-                    { text: 'WebStorm 配置', link: '/efficiency/software/webstorm' }
+                    { text: 'Mac 平台', link: '/efficiency/mac' },
+                    { text: 'Windows 平台', link: '/efficiency/windows' },
                 ]
             },
-            { text: '在线工具', link: '/efficiency/online-tools' },
-            { text: '书签脚本', link: '/efficiency/bookmark-scripts' }
         ],
         activeMatch: '^/efficiency'
     },

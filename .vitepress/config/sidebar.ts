@@ -8,15 +8,12 @@ const sync = fg.sync;
 export const sidebar: DefaultTheme.Sidebar = {
     '/blog': getItemsByDate('posts/blog'),
     '/review': getItemsByCategory('posts/review'),
-    '/workflow': getItemsByCategory('posts/workflow')
+    '/workflow': getItemsByCategory('posts/workflow'),
+    '/efficiency': getItemsByCategory('posts/efficiency'),
 }
 
-/**
- * 根据 posts/分类/年份/标题/README.md的目录格式, 获取侧边栏分组及分组下标题
- * 
- * @param path 扫描基础路径
- * @returns {DefaultTheme.SidebarItem[]}
- */
+// 根据 posts/分类/年份/标题/README.md的目录格式, 获取侧边栏分组及分组下标题
+// 组成路由 => /分类/年份/标题
 function getItemsByDate(path: string) {
     // 侧边栏年份分组数组
     let yearGroups: DefaultTheme.SidebarItem[] = [];
@@ -38,7 +35,6 @@ function getItemsByDate(path: string) {
             objectMode: true,
         }).forEach(({ name }) => {
             let title = name;
-
             sync(`${path}/${year}/${title}/*`, {
                 onlyDirectories: false,
                 objectMode: true,
@@ -91,12 +87,8 @@ function getItemsByDate(path: string) {
     return yearGroups;
 }
 
-/**
- * 根据 posts/分类/细分类/标题/README.md的目录格式, 获取侧边栏分组及分组下标题
- * 
- * @param path 扫描基础路径
- * @returns {DefaultTheme.SidebarItem[]}
- */
+// 根据 posts/分类/细分类/标题/README.md的目录格式, 获取侧边栏分组及分组下标题
+// 组成路由 => /分类/细分类/标题
 function getItemsByCategory(path: string) {
     // 侧边栏分组数组
     let groups: DefaultTheme.SidebarItem[] = [];
@@ -111,15 +103,23 @@ function getItemsByCategory(path: string) {
     sync(`${path}/*`, {
         onlyDirectories: true,
         objectMode: true,
+    }).sort((a, b) => {
+        if (fs.existsSync(`${a.path}/index.md`) && fs.existsSync(`${b.path}/index.md`)) {
+            let aData = matter.read(`${a.path}/index.md`);
+            let bData = matter.read(`${b.path}/index.md`);
+            return aData.data.sort - bData.data.sort;
+        }
+        return 0;
     }).forEach(({ name }) => {
         let group = name;
 
-        // ${path}/group/index.md
-        // 判断这个文件是否存在
+        // 获取章节标题
         let chapter: string = '';
+        let showChapterCount: boolean = true;
         if (fs.existsSync(`${path}/${group}/index.md`)) {
             const { data } = matter.read(`${path}/${group}/index.md`);
             data.title !== undefined ? chapter = data.title : chapter = group;
+            data.showChapterCount !== undefined ? showChapterCount = data.showChapterCount : showChapterCount = true;
         }
 
         // 2.获取分组下的所有文章
@@ -128,7 +128,6 @@ function getItemsByCategory(path: string) {
             objectMode: true,
         }).forEach(({ name }) => {
             let title = name;
-
             sync(`${path}/${group}/${title}/*`, {
                 onlyFiles: true,
                 objectMode: true,
@@ -145,7 +144,7 @@ function getItemsByCategory(path: string) {
         })
 
         groups.push({
-            text: `${chapter !== '' ? chapter : group} ${items.length > 0 ? `(${items.length}篇)` : ''}`,
+            text: `${chapter !== '' ? chapter : group} ${showChapterCount && items.length > 0 ? `(${items.length}篇)` : ''}`,
             items: items,
             // collapsed: items.length < groupCollapsedSize || total > titleCollapsedSize,
             collapsed: total > titleCollapsedSize,
@@ -153,28 +152,26 @@ function getItemsByCategory(path: string) {
 
         // 4.清空侧边栏分组下标题数组
         items = [];
-    })
+    });
 
     // 添加序号
     sortArticleItems(groups);
     return groups;
 }
 
-/**
- * 根据date 排序, 逆序
- * 
- * @param groups 分组数据
- */
-function sortArticleItems(groups) {
+// 根据date 排序, 逆序
+function sortArticleItems(groups: DefaultTheme.SidebarItem[]) {
     for (let i = 0; i < groups.length; i++) {
-        groups[i].items.sort((a, b) => {
-            return new Date(b.docFooterText).getTime() - new Date(a.docFooterText).getTime()
+        groups[i].items?.sort((a, b) => {
+            if (a.docFooterText && b.docFooterText) {
+                return new Date(b.docFooterText).getTime() - new Date(a.docFooterText).getTime()
+            }
+            return 0;
         })
 
-        for (let j = 0; j < groups[i].items.length; j++) {
-            let items = groups[i].items;
-            items[j].text = `📝 ${items[j].text}`;
-            delete items[j].docFooterText;
-        }
+        groups[i].items?.forEach((item) => {
+            item.text = `📝 ${item.text}`;
+            delete item.docFooterText;
+        })
     }
 }

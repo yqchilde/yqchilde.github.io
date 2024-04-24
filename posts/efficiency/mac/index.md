@@ -1,8 +1,9 @@
 ---
-sort: 1
-title: 编程规范
+title: "Mac篇"
 showArticleMetadata: false
 showChapterCount: false
 ---
 
-# 这里是frontend style-guide
+# 这里是frontend mac
+
+test
