@@ -4,13 +4,14 @@
 			:category="giscusConfig.category" :category-id="giscusConfig.categoryId" :mapping="giscusConfig.mapping"
 			:reactions-enabled="giscusConfig.reactionsEnabled" :emit-metadata="giscusConfig.emitMetadata"
 			:input-position="giscusConfig.inputPosition" :theme="isDark ? 'dark' : 'light'" :lang="giscusConfig.lang"
-			:loading="giscusConfig.loading" />
+			:loading="giscusConfig.loading" :key="md5(route.path)" />
 	</div>
 </template>
 <script lang="ts" setup>
 import { reactive, ref, watch, nextTick } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import Giscus, { type GiscusProps } from '@giscus/vue'
+import md5 from 'blueimp-md5'
 
 const route = useRoute();
 const { isDark, frontmatter } = useData();
