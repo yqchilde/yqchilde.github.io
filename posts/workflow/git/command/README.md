@@ -268,6 +268,5 @@ git log --pretty=oneline
 git reflog
 ```
 
-## 数据来源
+## 参考
 * [阮一峰 - 常用 Git 命令清单](https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
-* [{{ $frontmatter.author }} - {{ $frontmatter.title }}](https://mm-notes.netlify.app/workflow/git/command)

@@ -17,6 +17,7 @@ declare module 'vue' {
     ArticleMetadata: typeof import('./.vitepress/theme/components/articleMetadata.vue')['default']
     ATag: typeof import('@arco-design/web-vue')['Tag']
     Comment: typeof import('./.vitepress/theme/components/comment.vue')['default']
+    Copyrights: typeof import('./.vitepress/theme/components/copyrights.vue')['default']
     IconShareAlt: typeof import('@arco-design/web-vue/es/icon')['IconShareAlt']
     IconTrophy: typeof import('@arco-design/web-vue/es/icon')['IconTrophy']
     ImageViewer: typeof import('./.vitepress/theme/components/imageViewer.vue')['default']

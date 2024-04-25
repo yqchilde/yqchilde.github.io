@@ -4,8 +4,7 @@ layout: home
 layoutClass: 'm-home-layout'
 
 hero:
-  name: "YY物语"
-  text: "YY 的成长之路"
+  name: "YY 物语"
   tagline: 积累如同滴水穿石，知识之泉汇聚成河
   image:
     src: /background.png
@@ -20,7 +19,7 @@ hero:
 
 features:
   - icon: 📖
-    title: 后端物语
+    title: 后端纪事
     details: 整理后端常用知识点<small>（面试八股文）</small><br />不妥之处，敬请雅正
     link: /review
     linkText: 前端常用知识

@@ -61,12 +61,17 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/yqchilde/yqchilde.github.io' }
     ],
     footer: {
-      copyright: 'Copyright © 2019-2024 程序员YY | CC BY-NC 4.0 |  <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">晋ICP备18003223号-2</a>'
+      copyright: 'Copyright © 2019-2024 YY物语 | CC BY-NC 4.0 |  <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener">晋ICP备18003223号-2</a>'
     },
     // @ts-ignore
     articleMetadataConfig: {
       author: 'YY', // 文章全局默认作者名称
       authorLink: '/about', // 点击作者名时默认跳转的链接
+    },
+    // 自定义扩展: 文章版权配置
+    copyrightConfig: {
+      license: '署名-相同方式共享 4.0 国际 (CC BY-SA 4.0)',
+      licenseLink: 'https://creativecommons.org/licenses/by/4.0/legalcode.zh-hans'
     },
   },
 

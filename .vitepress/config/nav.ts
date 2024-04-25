@@ -6,7 +6,7 @@ export const nav: DefaultTheme.NavItem[] = [
         link: '/nav',
     },
     {
-        text: "后端物语",
+        text: "后端纪事",
         activeMatch: '^/review',
         items: [
             { text: "Golang篇", link: "/review/golang" },

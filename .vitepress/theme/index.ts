@@ -5,6 +5,7 @@ import { useData, EnhanceAppContext } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import comment from './components/comment.vue'
 import imageViewer from './components/imageViewer.vue'
+import copyrights from './components/copyrights.vue'
 
 import './styles/index.scss'
 
@@ -45,6 +46,7 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       "doc-after": () => h(comment),
       "doc-bottom": () => h(imageViewer),
+      "doc-footer-before": () => h(copyrights),
     })
   },
   // enhanceApp(ctx) {
