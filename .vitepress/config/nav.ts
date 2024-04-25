@@ -34,11 +34,12 @@ export const nav: DefaultTheme.NavItem[] = [
                     { text: '常用片段整理', link: '/workflow/utils/snippets' }
                 ]
             },
-            // {
-            //     items: [
-            //         { text: 'Git 命令清单', link: '/workflow/git/command' },
-            //     ]
-            // },
+            {
+                items: [
+                    { text: 'Git 命令清单', link: '/workflow/git/command' },
+                    { text: 'Git 常用命令', link: '/workflow/git/common-command' },
+                ]
+            },
         ],
         activeMatch: '^/workflow'
     },

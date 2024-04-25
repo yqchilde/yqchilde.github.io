@@ -34,7 +34,7 @@ function getItemsByDate(path: string) {
             objectMode: true,
         }).forEach(({ name }) => {
             let title = name;
-            sync(`${path}/${year}/${title}/*`, {
+            sync(`${path}/${year}/${title}/*.md`, {
                 onlyDirectories: false,
                 objectMode: true,
             }).forEach((article) => {
@@ -115,10 +115,12 @@ function getItemsByCategory(path: string) {
         // 获取章节标题
         let chapter: string = '';
         let showChapterCount: boolean = true;
+        let needRoute: boolean = false;
         if (fs.existsSync(`${path}/${group}/index.md`)) {
             const { data } = matter.read(`${path}/${group}/index.md`);
             data.title !== undefined ? chapter = data.title : chapter = group;
             data.showChapterCount !== undefined ? showChapterCount = data.showChapterCount : showChapterCount = true;
+            data.needRoute !== undefined ? needRoute = data.needRoute : needRoute = false;
         }
 
         // 2.获取分组下的所有文章
@@ -127,7 +129,7 @@ function getItemsByCategory(path: string) {
             objectMode: true,
         }).forEach(({ name }) => {
             let title = name;
-            sync(`${path}/${group}/${title}/*`, {
+            sync(`${path}/${group}/${title}/*.md`, {
                 onlyFiles: true,
                 objectMode: true,
             }).forEach((article) => {
@@ -144,6 +146,7 @@ function getItemsByCategory(path: string) {
 
         groups.push({
             text: `${chapter !== '' ? chapter : group} ${showChapterCount && items.length > 0 ? `(${items.length}篇)` : ''}`,
+            link: `${needRoute ? `/${path}/${group}`.replace('posts/', '') : ''}`,
             items: items,
             // collapsed: items.length < groupCollapsedSize || total > titleCollapsedSize,
             collapsed: total > titleCollapsedSize,
