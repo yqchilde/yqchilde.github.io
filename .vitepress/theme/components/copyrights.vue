@@ -62,8 +62,8 @@ watch(
 
 <style scoped>
 .post-copyright {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: -30px;
+    margin-bottom: 15px;
 }
 
 .post-copyright .post-copyright-item {
