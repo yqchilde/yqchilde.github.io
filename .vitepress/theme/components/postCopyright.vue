@@ -1,35 +1,33 @@
 <template>
-    <ClientOnly>
-        <div v-show="isShow" class="info custom-block post-copyright" :key="md5(route.path)">
-            <div class="post-copyright-item">
-                <span v-if="isOriginal" class="post-copyright-meta">本文作者：</span>
-                <span v-else class="post-copyright-meta">原文作者：</span>
-                <span>
-                    <a v-if="isOriginal" :href="authorLink" title="进入作者主页" target="_blank">{{ author }}</a>
-                    <span v-else :title="author">{{ author }}</span>
-                </span>
-            </div>
-            <div class="post-copyright-item">
-                <span v-if="isOriginal" class="post-copyright-meta">本文链接：</span>
-                <span v-else class="post-copyright-meta">原文链接：</span>
-                <span>
-                    <a v-if="isOriginal" :href="articleLink" target="_blank">{{ articleLink }}</a>
-                    <a v-else :href="articleLink" target="_blank">{{ articleLink }}</a>
-                </span>
-            </div>
-            <div v-if="isOriginal" class="post-copyright-item">
-                <span class="post-copyright-meta">版权声明：</span>
-                <span>
-                    本博客所有文章除特别声明外，均采用 <a :href="theme.copyrightConfig.licenseLink" target="_blank">CC BY-NC-SA
-                        4.0</a>许可协议。转载请注明来自 <a :href="articleLink">YY物语</a>！
-                </span>
-            </div>
+    <div v-show="isShow" class="info custom-block post-copyright" :key="md5(route.path)">
+        <div class="post-copyright-item">
+            <span v-if="isOriginal" class="post-copyright-meta">本文作者：</span>
+            <span v-else class="post-copyright-meta">原文作者：</span>
+            <span>
+                <a v-if="isOriginal" :href="authorLink" title="进入作者主页" target="_blank">{{ author }}</a>
+                <span v-else :title="author">{{ author }}</span>
+            </span>
         </div>
-    </ClientOnly>
+        <div class="post-copyright-item">
+            <span v-if="isOriginal" class="post-copyright-meta">本文链接：</span>
+            <span v-else class="post-copyright-meta">原文链接：</span>
+            <span>
+                <a v-if="isOriginal" :href="articleLink" target="_blank">{{ articleLink }}</a>
+                <a v-else :href="articleLink" target="_blank">{{ articleLink }}</a>
+            </span>
+        </div>
+        <div v-if="isOriginal" class="post-copyright-item">
+            <span class="post-copyright-meta">版权声明：</span>
+            <span>
+                本博客所有文章除特别声明外，均采用 <a :href="theme.copyrightConfig.licenseLink" target="_blank">CC BY-NC-SA
+                    4.0</a>许可协议。转载请注明来自 <a :href="articleLink">YY物语</a>！
+            </span>
+        </div>
+    </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, toRefs, ref, watch, nextTick } from 'vue'
+import { reactive, toRefs, watch, nextTick } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import md5 from 'blueimp-md5'
 const { theme, frontmatter, page } = useData();

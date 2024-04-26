@@ -39,10 +39,10 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          REPOSITORY_NAME: yqchilde/yqchilde.github.io
-          BRANCH: gh-pages
-          FOLDER: dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository-name: yqchilde/yqchilde.github.io
+          branch: gh-pages
+          folder: dist
 
   algolia:
     runs-on: ubuntu-latest
