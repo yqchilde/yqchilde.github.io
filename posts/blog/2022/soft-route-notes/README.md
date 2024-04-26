@@ -1,5 +1,5 @@
 ---
-title: "玩软路由的一些笔记"
+title: "Pve上搭软路由的一些软件"
 description: "玩软路由也有两个月了，逐渐开始不想折腾了，特此记录一下一些配置，以防止日后生疏忘记。"
 date: 2022-08-29 08:49:39
 tags: ["软路由"]
@@ -23,49 +23,45 @@ tags: ["软路由"]
 
 固件下载地址： [https://www.ikuai8.com/component/download](https://www.ikuai8.com/component/download)，下载ISO镜像导入到pve-local里，如图
 
-![img](https://pic.yqqy.top/blog/202208290958939.png)
+![img](./202208290958939.png)
 
 1. 右上角点击 <创建虚拟机>
 
-![](https://pic.yqqy.top/blog/202208291013559.png)
+![img](./202208291013559.png)
 
 2. 操作系统配置
 
-![](https://pic.yqqy.top/blog/202208291014407.png)
+![img](./202208291014407.png)
 
 3. 系统配置
 
-![](https://pic.yqqy.top/blog/202208291014310.png)
+![img](./202208291014310.png)
 
 4. 磁盘配置
 
-![](https://pic.yqqy.top/blog/202208291048429.png)
+![img](./202208291048429.png)
 
 5. CPU配置
 
-![](https://pic.yqqy.top/blog/202208291055653.png)
+![img](./202208291055653.png)
 
 6. 内存配置
 
-![](https://pic.yqqy.top/blog/202208291056704.png)
+![img](./202208291056704.png)
 
 7. 网络配置
 
-![](https://pic.yqqy.top/blog/202208291058116.png)
+![img](./202208291058116.png)
 
 8. 网卡直通
 
-![](https://pic.yqqy.top/blog/202208291112421.png)
+![img](./202208291112421.png)
 
-![](https://pic.yqqy.top/blog/202208291124108.png)
+![img](./202208291124108.png)
 
 9. 修改引导顺序
 
-![](https://pic.yqqy.top/blog/202208291114446.png)
-
-#### iKuai配置
-
-待补充
+![img](./202208291114446.png)
 
 ### openwrt
 
@@ -76,47 +72,43 @@ tags: ["软路由"]
 2. 上传镜像，同ikuai上传一样方式，上传到pve-local，提前复制好上传后保存的路径
 3. 右上角点击 <创建虚拟机>
 
-![](https://pic.yqqy.top/blog/202208291153945.png)
+![img](./202208291153945.png)
 
 4. 操作系统配置
 
-![](https://pic.yqqy.top/blog/202208291155143.png)
+![img](./202208291155143.png)
 
 5. 系统配置
 
-![](https://pic.yqqy.top/blog/202208291014310.png)
+![img](./202208291014310.png)
 
 6. 磁盘配置
 
-![](https://pic.yqqy.top/blog/202208291335935.png)
+![img](./202208291335935.png)
 
 7. CPU配置
 
-![](https://pic.yqqy.top/blog/202208291335712.png)
+![img](./202208291335712.png)
 
 8. 内存配置
 
-![](https://pic.yqqy.top/blog/202208291336394.png)
+![img](./202208291336394.png)
 
 9. 网络配置
 
-![](https://pic.yqqy.top/blog/202208291058116.png)
+![img](./202208291058116.png)
 
 10. 移除硬盘
 
-![](https://pic.yqqy.top/blog/202208291348314.png)
+![img](./202208291348314.png)
 
 11. 导入硬盘，在 `PVE` shell里输入命令 `qm importdisk 虚拟机id 镜像路径 local-lvm` 导入硬盘，返回虚拟机硬件配置，选择未使用的硬盘，格式为 `sata`
 
-![](https://pic.yqqy.top/blog/202208291406163.png)
+![img](./202208291406163.png)
 
 12. 调整引导顺序，注意只勾选sata，并将其上移到第一位
 
-![](https://pic.yqqy.top/blog/202208291408236.png)
-
-#### openwrt配置
-
-待补充
+![img](./202208291408236.png)
 
 ### 点心云
 
@@ -128,47 +120,43 @@ tags: ["软路由"]
 2. 下载iso的镜像就用装iKuai的方式装，img的镜像就用openwrt的方式装
 3. 博主选择用img方式安装，与openwrt不同的是，在第5步系统安装里，要选择uefi方式引导（增加稳定性👻）
 
-![](https://pic.yqqy.top/blog/202208291427925.png)
+![img](./202208291427925.png)
 
 4. 磁盘这里选择好12G，大多数教程推荐16G，其实够用就行
 
-![](https://pic.yqqy.top/blog/202208291429716.png)
+![img](./202208291429716.png)
 
 5. 使用 `qm importdisk` 导入硬盘
 
-![](https://pic.yqqy.top/blog/202208291451016.png)
+![img](./202208291451016.png)
 
 6. 回到系统中，双击按sata方式添加
 
-![](https://pic.yqqy.top/blog/202208291452321.png)
+![img](./202208291452321.png)
 
 7. 修改引导顺序，选中刚添加的sata盘，并将其移到第一位
 
-![](https://pic.yqqy.top/blog/202208291457541.png)
+![img](./202208291457541.png)
 
-![](https://pic.yqqy.top/blog/202208291458321.png)
+![img](./202208291458321.png)
 
 8. 进入控制台中进行装机，选择ok进行装机，这一步时间很长
 
-![](https://pic.yqqy.top/blog/202208291459641.png)
+![img](./202208291459641.png)
 
 9. 装机完成后会再次回到上图页面中，此时停止虚拟机，回到系统硬件设置中，将刚才添加的sata盘分离并删除
 
-![](https://pic.yqqy.top/blog/202208291505278.png)
+![img](./202208291505278.png)
 
 10. 添加数据盘，这里使用了直通硬盘，直通一块新的盘，如果本地盘足够大可以直接添加本地盘。使用命令 `ls -l /dev/disk/by-id/` 查看
 
-![](https://pic.yqqy.top/blog/202208291507621.png)
+![img](./202208291507621.png)
 
 使用命令 `qm set 虚拟机id -sata1 /dev/disk/by-id/ata-GLOWAY_STK960GS3-S7_002203065121` 可直通，请注意命令需要替换成自己的硬件信息
 
-![](https://pic.yqqy.top/blog/202208291509685.png)
+![img](./202208291509685.png)
 
 11. 开机启动，出现二维码，App添加应用
-
-#### 配置网络
-
-待补充
 
 ### ubuntu
 
@@ -187,13 +175,13 @@ wget -O /var/lib/pve-manager/apl-info/mirrors.ustc.edu.cn https://mirrors.ustc.e
 
 2. 下载模板
 
-![](https://pic.yqqy.top/blog/202208291522312.png)
+![img](./202208291522312.png)
 
 3. 右上角<创建CT> ，取消勾选无特权的容器，其他步骤都很简单
 
 4. LXC本身就是一个容器，如果想要在内部继续使用docker等容器技术，需要开启嵌套，并且需要在`PVE`里的shell编辑 `vim /etc/pve/lxc/容器id.conf` ，添加
 
-![](https://pic.yqqy.top/blog/202208291525159.png)
+![img](./202208291525159.png)
 
 ```shell
 # 添加如下内容
@@ -201,9 +189,3 @@ lxc.apparmor.profile: unconfined
 lxc.cgroup.devices.allow: a
 lxc.cap.drop:
 ```
-
-## 实用的Docker服务
-
-NPM(nginx-proxy-manager)
-
-写的累了抽空补充

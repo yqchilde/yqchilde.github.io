@@ -45,7 +45,7 @@ main "$1" "$2" "$3"
 
 1. 将脚本保存在 `PVE宿主机里任意一个目录`，要记住这个目录，比如这样
 
-![](https://pic.yqqy.top/blog/202209061504319.png)
+![](./202209061504319.png)
 
 2. 执行一下，注意要替换一下命令的 `{}` 里的内容
 
@@ -53,7 +53,7 @@ main "$1" "$2" "$3"
 bash keepalive.sh {pve虚拟机ID} {虚拟机名称 随便写只做记录用} {虚拟机使用的IP}
 ```
 
-![](https://pic.yqqy.top/blog/202209061508462.png)
+![](./202209061508462.png)
 
 ## 第二步 - 加入Crontab
 
@@ -62,4 +62,4 @@ bash keepalive.sh {pve虚拟机ID} {虚拟机名称 随便写只做记录用} {�
 3. 输入 `service cron restart` 重启crontab
 4. 以上cron命令是每隔3分钟执行一次脚本，并将输入日志打印在 `/home/script/keepalive/openwrt.log` 这个文件里，查询时可以进入这个路径然后 `cat openwrt.log` 来查看日志
 
-![](https://pic.yqqy.top/blog/202209061512481.png)
+![](./202209061512481.png)

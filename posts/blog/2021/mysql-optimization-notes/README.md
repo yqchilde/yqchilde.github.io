@@ -58,11 +58,11 @@ tags: ["MySQL"]
 
 B+Tree结构
 
-![img1](https://pic.yqqy.top/blog/20211121205415.png "图1")
+![img1](./20211121205415.png "图1")
 
 查找8和9的路径为：
 
-![img2](https://pic.yqqy.top/blog/20211121205136.gif "图2")
+![img2](./20211121205136.gif "图2")
 
 ### 了解 - MySQL常用的索引
 

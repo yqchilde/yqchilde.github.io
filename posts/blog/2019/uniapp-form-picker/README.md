@@ -13,13 +13,13 @@ tags: ["UniAPP"]
 
 ## 效果图
 
-![mark](https://pic.yqqy.top/blog/20171011unipicker.gif "效果图")
+![img](./20171011unipicker.gif "效果图")
 
 ## 可能感觉很好写
 
 其实这里有一个蛋疼的地方，借用原作者的一句话，picker通过form提交的时候，肯定提交的是自己的value，那么就相当于永远提交的是0、1、2、3、4、5…… 这样的话问题就来了，咱们要这些个0123有个毛用？所以你会发现官方文档给的，只能返回索引值。
 
-![mark](https://pic.yqqy.top/blog/20200111/XjHmRG5eNOCN.png "参数")
+![img](./CBSWpjny0QA8.png "参数")
 
 ## uniapp写法
 

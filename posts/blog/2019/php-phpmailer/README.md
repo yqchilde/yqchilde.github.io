@@ -121,6 +121,6 @@ if ($sendRes == false) {
 
 ## 成功发信
 
-![mark](https://pic.yqqy.top/blog/20200111/8TGarEu0hX9E.png "收到邮件")
+![img](./8TGarEu0hX9E.png "收到邮件")
 
-![mark](https://pic.yqqy.top/blog/20200111/024PtSRickMk.png "发送邮件")
+![img](./024PtSRickMk.png "发送邮件")

@@ -14,14 +14,14 @@ tags: ["Download"]
 
 ## 操作步骤按图示
 
-![mark](https://pic.yqqy.top/blog/20200125/e9UPKf8q5ecR.png "步骤一")
+![img](./e9UPKf8q5ecR.png "步骤一")
 
-![mark](https://pic.yqqy.top/blog/20200125/Je0xBXHob5lf.png "步骤二")
+![img](./Je0xBXHob5lf.png "步骤二")
 
-![mark](https://pic.yqqy.top/blog/20200125/dIGN43XRXKlC.png "步骤三")
+![img](./dIGN43XRXKlC.png "步骤三")
 
-![mark](https://pic.yqqy.top/blog/20200125/uwqRImE86Ey2.png "步骤四")
+![img](./uwqRImE86Ey2.png "步骤四")
 
-![mark](https://pic.yqqy.top/blog/20200125/SEKLbsp7ignU.png "步骤五")
+![img](./SEKLbsp7ignU.png "步骤五")
 
-![mark](https://pic.yqqy.top/blog/20200125/17muq4KwuOtk.png "步骤六")
+![img](./17muq4KwuOtk.png "步骤六")

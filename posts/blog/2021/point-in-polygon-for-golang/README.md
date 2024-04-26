@@ -11,7 +11,7 @@ tags: ["Golang"]
 >
 > 如何判断一个点是否在一个多边形中？
 
-![img](https://pic.yqqy.top/blog/20211125082518.png "img1")
+![img](./20211125082518.png "img1")
 
 ## Go实现代码
 

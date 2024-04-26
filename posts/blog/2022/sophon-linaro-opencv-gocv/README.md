@@ -9,9 +9,11 @@ tags: ["Golang"]
 
 ::: tip 背景
 本文的背景是基于一台 **AI微服务器SE5-8** （以下简称AI盒子）上进行开发，SOPHON AI微服务器SE5-8是一款高性能、低功耗边缘计算产品，搭载算能自主研发的第三代TPU芯片BM1684，INT8算力高达10.6TOPS，可同时处理8路高清视频，支持8路全高清视频硬件解码与1路编码。
+
+为什么要改gocv的包？因为算能盒子自带了opencv，但是版本和gocv里的对不上，并且有一些系统依赖根本不存在，也用不到，所以要自行改gocv的包。
 :::
 
-## 初遇 - Golang 编译
+## 0. 编译报错
 
 首先我们准备如下一段代码：
 
@@ -42,7 +44,7 @@ No package 'opencv4' found
 pkg-config: exit status 1
 ```
 
-## 浅尝 - 尝试使用自带的opencv
+## 1. 尝试使用自带的opencv
 
 根据上文报错信息看，是因为我们没有按照 `gocv` 指定的依赖路径存放opencv编译包，所以我们需要指定一个路径，做如下处理：
 
@@ -100,7 +102,7 @@ highgui.cpp:13:5: error: ‘imshow’ is not a member of ‘cv’
 
 发现编译还是报了很多错误，出现这个原因是因为我所使用的这台 AI盒子 ，不支持显示即可视化，那么就意味着用不来了自带的优化好的 opencv 了，而且这里要说，自带的 opencv 是4.1的，如果要使用 `gocv` 最近的几个版本，其中很多方法，可能在编译好的opencv库里并没有，这就意味着我们要想办法自行编译 `opencv`。
 
-## 所悟 - 自行编译opencv
+## 2. 自行编译opencv
 
 1. 进入gocv mod中的文件夹
 
@@ -134,7 +136,7 @@ cmake -DCMAKE_INSTALL_PREFIX=./opencv_install/ -DCMAKE_TOOLCHAIN_FILE=../aarch64
 
 执行 `make -j $(nproc --all)` 进行编译，执行 `make install` 安装编译后文件到 `opencv_install` 目录，拷贝 `lib` 和 `include` 目录内文件到盒子相关目录
 
-## 终章 - 再次使用Golang编译
+## 3. 再次使用Golang编译
 
 1. 删除和gui相关的文件
 
@@ -175,7 +177,7 @@ $ go build
 Hello, World!
 ```
 
-## 总结 - 撒花
+## 4. 总结
 
 1. 如果没有按照 `gocv` 指定的 `opencv` 编译方式去编译，那需要自己指定 `opencv4.pc` 的位置
 2. 如果编译过程中报了某些依赖库( .so 库)的错，要么去想办法解决掉那些库，编译过程中实在用不到的，要在 `gocv` 源码中删掉对应的文件

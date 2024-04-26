@@ -9,7 +9,7 @@ tags: ["UniAPP"]
 
 ## 先看效果图
 
-![mark](https://pic.yqqy.top/blog/2017unishengchengqr.gif "效果图")
+![img](./2017unishengchengqr.gif "效果图")
 
 ## 引入插件
 
@@ -335,11 +335,9 @@ console.log(b); // 3
 
 - 举个例子，比如正则表达式验证
 
-![mark](https://pic.yqqy.top/blog/20200111/4e6HB9OIhlir.png?imageslim "正则")
+![img](./4e6HB9OIhlir.png)
 
 数组中有6个，我们只想要第一个怎么办？
-
-![mark](https://pic.yqqy.top/blog/20200111/M8J8ONE2V90Y.png "选择合适的")
 
 只需要省略掉其他的参数就行
 

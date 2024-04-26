@@ -15,17 +15,17 @@ tags: ["Ubuntu", "Golang"]
 
 如果已经通过apt-get安装过了，首先去卸载，如果没有安装请直接跳到 **安装** 部分
 
-![img](https://pic.yqqy.top/blog/202111291036765.jpg "img1")
+![img](./202111291036765.jpg "img1")
 
 命令如下：
 
 > sudo apt-get remove golang-go
 
-![img](https://pic.yqqy.top/blog/202111291038792.jpg "img2")
+![img](./202111291038792.jpg "img2")
 
 > sudo apt-get remove --auto-remove golang-go
 
-![img](https://pic.yqqy.top/blog/202111291038634.jpg "img3")
+![img](./202111291038634.jpg "img3")
 
 ## 安装
 

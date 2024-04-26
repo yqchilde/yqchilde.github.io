@@ -7,7 +7,7 @@ tags: ["Golang"]
 
 # Golang的Context学习
 
-![img](https://pic.yqqy.top/blog/20200516000510.png)
+![img](./20200516000510.png)
 
 ::: tip
 在go1.7之前，context还是非编制的，存在（golang.org/x/net/context）中，golang团队发现context这个东西很好用，于是把它收编了，1.7版本正式进入了标准库。专门用来简化处理多个goroutine之间与请求域的数据、取消信号、截止时间等相关操作。

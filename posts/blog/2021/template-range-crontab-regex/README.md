@@ -19,7 +19,7 @@ tags: ["Golang"]
 
 效果如下图：
 
-![](https://pic.yqqy.top/blog/20210404174920.png "图一")
+![img](./20210404174920.png "图一")
 
 出现了一行空白，接着修改如下：
 
@@ -31,7 +31,7 @@ tags: ["Golang"]
 } >> /scripts/docker/merged_list_file.sh
 ```
 
-![image-20210404175049733](https://pic.yqqy.top/blog/20210404175051.png "图2")
+![img](./20210404175051.png "图2")
 
 正确修改方式如下，这个坑还是不少人会踩到：
 
@@ -43,7 +43,7 @@ tags: ["Golang"]
 } >> /scripts/docker/merged_list_file.sh
 ```
 
-![image-20210404175203952](https://pic.yqqy.top/blog/20210404175205.png "图三")
+![img](./20210404175205.png "图三")
 
 ## crontab regex
 
@@ -68,7 +68,7 @@ tags: ["Golang"]
 
 效果如下，如果有人看到了这篇文章，恰好这个正则不能匹配你的crontab，麻烦留一下正则作为我的补充。
 
-![image-20210404175645634](https://pic.yqqy.top/blog/20210404175647.png "图4")
+![img](./20210404175647.png "图4")
 
 > 2021-06-05更新最新的crontab表达式
 

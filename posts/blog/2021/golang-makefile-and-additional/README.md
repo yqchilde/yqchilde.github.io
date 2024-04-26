@@ -328,7 +328,7 @@ func RestartProcess(proName string) error {
 ```
 效果如下：
 
-![gif](https://pic.yqqy.top/blog/20210421224216.gif "效果图")
+![gif](./20210421224216.gif "效果图")
 
 完整的项目代码在这里 [Golang基于Github releases进行覆盖更新](https://github.com/yqchilde/Scripts/blob/main/jd/cmd/jd-cli/main.go) 
 ## 参考文章

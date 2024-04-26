@@ -19,7 +19,7 @@ tags: ["Windows"]
 
 根据系统选择对应的包，一共需要下载4个安装包（每类种选择一个）都要下载(64位可以下载32的，32只下载32的就可)
 
-![image-20201108190353787](https://pic.yqqy.top/blog/20201108190857.png "选择版本")
+![img](./20201108190857.png "选择版本")
 
 ## 安装包
 
@@ -35,7 +35,7 @@ Add-AppxPackage *
 
 企业版太不适合开发党了，想下载个新版 Terminal版本都不够，只能切换到专业版了
 
-![image-20201108191221252](https://pic.yqqy.top/blog/20201108191223.png "一键切换软件")
+![img](./20201108191223.png "一键切换软件")
 
 * **下载地址：**[https://www.lanzouw.com/ihWfli71vzc](https://www.lanzouw.com/ihWfli71vzc) 密码:2vgu
 

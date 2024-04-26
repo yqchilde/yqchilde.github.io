@@ -21,9 +21,9 @@ ANSI序列是在二十世纪七十年代引入的标准，用以取代特定于�
 
 2. 选择自己的电脑需要的配置
 
-   ![mark](https://pic.yqqy.top/blog/20200111/PtEwQgNosvfj.png)
+   ![img](./PtEwQgNosvfj.png)
 
-   ![mark](https://pic.yqqy.top/blog/20200111/Wa5AQmQeh1H1.png)
+   ![img](./Wa5AQmQeh1H1.png)
 
 3. 路径行输入cmd快捷进入当前路径下的cmd窗口
 
@@ -38,11 +38,11 @@ ANSI序列是在二十世纪七十年代引入的标准，用以取代特定于�
 
 * **原来效果**
 
-  ![mark](https://pic.yqqy.top/blog/20200111/maNVT3Wcio8H.png)
+  ![img](./maNVT3Wcio8H.png)
 
 * **现在效果**
 
-  ![mark](https://pic.yqqy.top/blog/20200111/y4lANsHxEczi.png)
+  ![img](./y4lANsHxEczi.png)
 
 ## 参考博客
 

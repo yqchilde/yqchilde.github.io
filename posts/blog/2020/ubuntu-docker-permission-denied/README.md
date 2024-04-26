@@ -11,7 +11,7 @@ tags: ["Ubuntu", "Docker"]
 
 解决Ubuntu启动Docker "Got permission denied while trying to connect to the Docker daemon socket" 问题。在终端执行 `docker version `命令，出现以下错误
 
-![image-20201111081455844](https://pic.yqqy.top/blog/20201111081457.png "docker version")
+![img](./20201111081457.png "docker version")
 
 ## 原因分析
 
@@ -35,7 +35,7 @@ sudo gpasswd -a $USER docker
 newgrp docker
 ```
 
-![image-20201111081917641](https://pic.yqqy.top/blog/20201111081918.png "解决方案")
+![img](./20201111081918.png "解决方案")
 
 ## 检查结果
 

@@ -45,11 +45,11 @@ services:
 
 所以最终想法还是只在同目录用 `.env` 文件，这样不需要特别声明引入，只需要保证同目录即可，这时候我在 `docker-compose.yml` 文件中引入了 `FRUIT_SHARECODE1` 变量，按照我的理解是变量嵌套会间接引入上面的变量，结果变成了下面这个样子。
 
-![](https://pic.yqqy.top/blog/20210313150914.png "图1")
+![img](./20210313150914.png "图1")
 
 难道docker-compose不支持这种写法？还被多加了一个 `$`变成了 `$${}` ，随后在自己的本地电脑试了下，是按照我预想的结果输出的，那么问题就好说了，这说明是dockerc-compose版本不对，并不是不支持，当前服务器下的版本是 1.25.4，翻阅版本记录发现在 1.26.0 以后使用了 `python-dotenv` 管理了env_file，所以至少要使用大于1.26.0以后的版本。
 
-![](https://pic.yqqy.top/blog/20210313151336.png "图2")
+![img](./20210313151336.png "图2")
 
 顺便提一下更新 `docker-compose`版本步骤
 
@@ -63,7 +63,7 @@ $ curl -L https://github.com/docker/compose/releases/download/1.27.4/docker-comp
 
 更新之后再看一下效果吧
 
-![](https://pic.yqqy.top/blog/20210313151938.png "图三")
+![img](./20210313151938.png "图三")
 
 ## 总结
 
