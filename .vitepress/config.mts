@@ -90,4 +90,8 @@ export default defineConfig({
     './.github/',
     './README.md',
   ],
+
+  sitemap: {
+    hostname: 'https://yqqy.top',
+  },
 })
