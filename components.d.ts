@@ -24,6 +24,7 @@ declare module 'vue' {
     MNavLink: typeof import('./.vitepress/theme/components/mNavLink.vue')['default']
     MNavLinks: typeof import('./.vitepress/theme/components/mNavLinks.vue')['default']
     PostCopyright: typeof import('./.vitepress/theme/components/postCopyright.vue')['default']
+    Redirect: typeof import('./.vitepress/theme/components/redirect.vue')['default']
     Tag: typeof import('./.vitepress/theme/components/tag.vue')['default']
     WordCloud: typeof import('./.vitepress/theme/components/wordCloud.vue')['default']
   }
