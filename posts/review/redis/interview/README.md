@@ -107,7 +107,7 @@ Redis通过`MULTI`、`DISCARD`、`EXEC`、`WATCH`四个命令来实现事务功�
 * `DISCARD`: 取消一个事务（在`EXEC`前执行）
 * `输入其他命令`: 命令在服务器入列，命令语法错误会导致`EXEC`无法执行，即事务中断（所有命令都不执行）
 
-🤔 Redis事务(ACID)提供一致性和隔离性，<font color="red"><b>但不提供原子性和持久性</b></font>
+🤔 Redis事务(ACID)提供一致性和隔离性，<span style="color:red; font-weight: bold;">但不提供原子性和持久性</span>
 * 一致性(Consistency)：指不会出现执行一半命令的情况
 * 隔离性(Isolation)：指事务之间互不干扰，同时也不会在事务内插入其他命令
 * 原子性(Atomicity)：指事务内的命令全部执行或都不执行，无法做到因为一条命令的运行错误导致其他命令中断
