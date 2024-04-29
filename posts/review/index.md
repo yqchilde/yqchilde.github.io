@@ -2,4 +2,6 @@
 showArticleMetadata: false
 ---
 
-# 这里是frontend Review
+<script>
+    window.location.href = window.location.href + '/golang/map'
+</script>
