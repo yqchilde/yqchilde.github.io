@@ -1,5 +1,5 @@
 ---
-sort: 2
-title: "Python篇"
+sort: 3
+title: "Redis篇"
 showArticleMetadata: false
 ---
