@@ -4,4 +4,4 @@ title: "Redis篇"
 showArticleMetadata: false
 ---
 
-<ClientOnly><Redirect route="/interview"/></ClientOnly>
+<ClientOnly><Redirect route="/interview-1"/></ClientOnly>

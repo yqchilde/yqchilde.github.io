@@ -11,7 +11,7 @@ export const nav: DefaultTheme.NavItem[] = [
         items: [
             { text: "Golang篇", link: "/review/golang/map" },
             { text: "Python篇", link: "/review/python/if" },
-            { text: "Redis篇", link: "/review/redis/interview" },
+            { text: "Redis篇", link: "/review/redis/interview-1" },
         ]
     },
     // {

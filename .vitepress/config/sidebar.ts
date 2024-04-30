@@ -11,13 +11,19 @@ export const sidebar: DefaultTheme.Sidebar = {
     '/efficiency': getItemsByCategory('posts/efficiency'),
 }
 
+// 定义新类型，继承DefaultTheme.SidebarItem，并增加新字段
+export type SidebarItem = DefaultTheme.SidebarItem & {
+    date?: string,
+    sort?: number
+};
+
 // 根据 posts/分类/年份/标题/README.md的目录格式, 获取侧边栏分组及分组下标题
 // 组成路由 => /分类/年份/标题
 function getItemsByDate(path: string) {
     // 侧边栏年份分组数组
-    let yearGroups: DefaultTheme.SidebarItem[] = [];
+    let yearGroups: SidebarItem[] = [];
     // 置顶数组
-    let topArticleItems: DefaultTheme.SidebarItem[] = [];
+    let topArticleItems: SidebarItem[] = [];
 
     // 1.获取所有年份目录
     sync(`${path}/*`, {
@@ -26,7 +32,7 @@ function getItemsByDate(path: string) {
     }).forEach(({ name }) => {
         let year = name;
         // 年份数组
-        let articleItems: DefaultTheme.SidebarItem[] = [];
+        let articleItems: SidebarItem[] = [];
 
         // 2.获取所有月份目录
         sync(`${path}/${year}/*`, {
@@ -90,9 +96,9 @@ function getItemsByDate(path: string) {
 // 组成路由 => /分类/细分类/标题
 function getItemsByCategory(path: string) {
     // 侧边栏分组数组
-    let groups: DefaultTheme.SidebarItem[] = [];
+    let groups: SidebarItem[] = [];
     // 侧边栏分组下标题数组
-    let items: DefaultTheme.SidebarItem[] = [];
+    let items: SidebarItem[] = [];
     let total = 0;
     // 当分组内文章数量少于 2 篇或文章总数显示超过 20 篇时，自动折叠分组
     const groupCollapsedSize = 2;
@@ -138,7 +144,8 @@ function getItemsByCategory(path: string) {
                 items.push({
                     text: data.title,
                     link: `/${path}/${group}/${title}`.replace('posts/', ''),
-                    docFooterText: data.date,
+                    date: data.date,
+                    sort: data.sort,
                 });
                 total += 1;
             })
@@ -162,18 +169,22 @@ function getItemsByCategory(path: string) {
 }
 
 // 根据date 排序, 逆序
-function sortArticleItems(groups: DefaultTheme.SidebarItem[]) {
-    for (let i = 0; i < groups.length; i++) {
-        groups[i].items?.sort((a, b) => {
-            if (a.docFooterText && b.docFooterText) {
-                return new Date(b.docFooterText).getTime() - new Date(a.docFooterText).getTime()
+function sortArticleItems(groups: SidebarItem[]) {
+    groups.forEach((group) => {
+        (group.items as SidebarItem[] | undefined)?.sort((a, b) => {
+            if (a.sort && b.sort) {
+                return a.sort - b.sort;
+            }
+
+            if (a.date && b.date) {
+                return new Date(b.date).getTime() - new Date(a.date).getTime()
             }
             return 0;
-        })
+        });
 
-        groups[i].items?.forEach((item) => {
+        (group.items as SidebarItem[] | undefined)?.forEach((item) => {
             item.text = `📝 ${item.text}`;
-            delete item.docFooterText;
-        })
-    }
+            delete item.date;
+        });
+    });
 }
