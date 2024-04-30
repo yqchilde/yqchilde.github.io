@@ -50,7 +50,8 @@ function getItemsByDate(path: string) {
                     topArticleItems.unshift({
                         text: data.title,
                         link: `/${path}/${year}/${title}`.replace('posts/', ''),
-                        docFooterText: data.date,
+                        date: data.date,
+                        sort: data.sort,
                     });
                 }
 
@@ -58,7 +59,8 @@ function getItemsByDate(path: string) {
                 articleItems.unshift({
                     text: data.title,
                     link: `/${path}/${year}/${title}`.replace('posts/', ''),
-                    docFooterText: data.date,
+                    date: data.date,
+                    sort: data.sort,
                 });
             })
         })
