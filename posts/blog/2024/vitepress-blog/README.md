@@ -22,18 +22,19 @@ VitePress 支持在所有 Markdown 文件中使用 YAML frontmatter，并使用 
 
 1. `VitePress`内置的`frontmatter`，看这里：[frontmatter-config](https://vitepress.dev/zh/reference/frontmatter-config)
 2. `本博客`新增的`frontmatter`，有如下配置：
-    |         字段          |          格式          |     应用范围      | 含义                                      |
-    | :-----------------: | :------------------: | :-----------: | --------------------------------------- |
-    |        sort         |          1           | sidebar / doc | sidebar排序，来进行主目录或文章的排序，同一个目录下，sort越小越靠前 |
-    |      needRoute      |     true / false     |    sidebar    | sidebar是否需要路由，true的话可以点过去来介绍这个目录是干什么的   |
-    |        date         | YYYY-MM-DD hh:mm:ss  |      doc      | 文章发布日期                                  |
-    |        tags         | ["Golang", "Python"] |      doc      | 文章标签                                    |
-    | showArticleMetadata |     true / false     |      doc      | 是否展示文章主标题下面的信息，就是原创那行                   |
-    |     showComment     |     true / false     |      doc      | 是否展示评论                                  |
-    |  showChapterCount   |     true / false     |      doc      | 是否展示sidebar上的主目录的文章篇幅数                  |
-    |     isOriginal      |     true / false     |      doc      | 文章是否原创                                  |
-    |       author        |                      |      doc      | 文章作者，仅非原创需要写                            |
-    |     articleLink     |                      |      doc      | 文章链接，仅非原创需要写，原文链接                       |
+
+|         字段          |          格式          |     应用范围      | 含义                                      |
+| :-----------------: | :------------------: | :-----------: | --------------------------------------- |
+|        sort         |          1           | sidebar / doc | sidebar排序，来进行主目录或文章的排序，同一个目录下，sort越小越靠前 |
+|      needRoute      |     true / false     |    sidebar    | sidebar是否需要路由，true的话可以点过去来介绍这个目录是干什么的   |
+|        date         | YYYY-MM-DD hh:mm:ss  |      doc      | 文章发布日期                                  |
+|        tags         | ["Golang", "Python"] |      doc      | 文章标签                                    |
+| showArticleMetadata |     true / false     |      doc      | 是否展示文章主标题下面的信息，就是原创那行                   |
+|     showComment     |     true / false     |      doc      | 是否展示评论                                  |
+|  showChapterCount   |     true / false     |      doc      | 是否展示sidebar上的主目录的文章篇幅数                  |
+|     isOriginal      |     true / false     |      doc      | 文章是否原创                                  |
+|       author        |                      |      doc      | 文章作者，仅非原创需要写                            |
+|     articleLink     |                      |      doc      | 文章链接，仅非原创需要写，原文链接                       |
 
 
 ## sidebar
