@@ -2,7 +2,7 @@
   <div id="wordcloud-container"></div>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 import { onMounted, onBeforeUnmount } from 'vue'
 import { WordCloud } from '@antv/g2plot'
 
@@ -24,13 +24,16 @@ onMounted(() => {
     colorField: 'name',
     wordStyle: {
       fontFamily: 'Verdana',
-      fontSize: [14, 35],
+      fontSize: [12, 50],
       rotation: 0,
     },
-    // 返回值设置成一个 [0, 1) 区间内的值，
     random: () => 0.5,
   });
   wordCloud.render();
+  // 实现点击事件
+  // wordCloud.on('plot:click', (e) => {
+  //   console.log(e.data.data.text);
+  // });
 });
 
 onBeforeUnmount(() => {

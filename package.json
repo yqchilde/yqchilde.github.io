@@ -3,9 +3,10 @@
     "@arco-design/web-vue": "^2.55.1",
     "@arco-plugins/vite-vue": "^1.4.5",
     "@types/blueimp-md5": "^2.18.2",
-    "sass": "^1.75.0",
+    "@types/node": "^20.12.8",
+    "sass": "^1.76.0",
     "unplugin-vue-components": "^0.26.0",
-    "vitepress": "^1.1.0"
+    "vitepress": "^1.1.4"
   },
   "scripts": {
     "docs:dev": "vitepress dev --host",
@@ -17,12 +18,17 @@
     "@giscus/vue": "^3.0.0",
     "@mdit-vue/shared": "^2.1.2",
     "blueimp-md5": "^2.19.0",
-    "dayjs": "^1.11.10",
-    "gray-matter": "^4.0.3"
+    "dayjs": "^1.11.11",
+    "fast-glob": "^3.3.2",
+    "gray-matter": "^4.0.3",
+    "vite": "^5.2.11",
+    "vue": "^3.4.26"
   },
-  "overrides": {
-    "@antv/g-base": "0.5.11",
-    "@antv/path-util": "2.0.15",
-    "@antv/attr": "0.3.5"
+  "pnpm": {
+    "overrides": {
+      "@antv/g-base": "0.5.11",
+      "@antv/path-util": "2.0.15",
+      "@antv/attr": "0.3.5"
+    }
   }
 }

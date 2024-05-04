@@ -11,11 +11,6 @@ export default defineConfig({
         }),
     ],
     ssr: { noExternal: ['@arco-design/web-vue'] },
-    resolve: {
-        alias: {
-            'mermaid': 'mermaid/dist/mermaid.esm.mjs',
-        },
-    },
     build: {
         chunkSizeWarningLimit: 1700,
         rollupOptions: {
