@@ -1,0 +1,13 @@
+diff --git a/dist/cal-heatmap.esm.js b/dist/cal-heatmap.esm.js
+index 47f24ddb2228e405f5689055f36f4f9d3a433b8d..37779810f11942ff52da445c839c59e77da0793c 100644
+--- a/dist/cal-heatmap.esm.js
++++ b/dist/cal-heatmap.esm.js
+@@ -12467,7 +12467,7 @@ var DateHelper = /*#__PURE__*/function () {
+   }, {
+     key: "loadNodeLocale",
+     value: function loadNodeLocale(userLocale) {
+-      return import("dayjs/locale/".concat(userLocale, ".js"));
++      return import("/* @vite-ignore */ dayjs/locale/".concat(userLocale, ".js"));
+     }
+   }]);
+   return DateHelper;

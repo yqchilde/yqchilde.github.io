@@ -61,6 +61,11 @@
             var(--vp-c-brand) 30%,
             var(--vp-c-brand-next));
     --vp-home-hero-image-filter: blur(80px);
+    --vp-home-heatmap-legend-text: #585a5a;
+}
+
+.dark {
+    --vp-home-heatmap-legend-text: #ffffff;
 }
 
 @media (min-width: 640px) {

@@ -8,10 +8,11 @@
     "resolveJsonModule": true,
     "allowJs": true,
     "strict": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
   },
   "include": [
     "env.d.ts",
-    "**/.vitepress/**/*"
+    "**/.vitepress/**/*",
+    "components.d.ts"
   ]
 }

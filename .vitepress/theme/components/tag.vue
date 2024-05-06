@@ -152,18 +152,18 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
 import md5 from 'blueimp-md5'
-import { getQueryParam } from '../utils'
-import { data as articleData } from '../../../article.data.js';
+import { getQueryParam } from '../utils/utils'
+import {data as articleMeta } from '../utils/article.data.js';
 
-const tags = computed(() => initTags(articleData));
+const tags = computed(() => initTags(articleMeta));
 /**
  * 初始化标签数据
  * {tagTitle1: [article1, article2, ...}
  */
-function initTags(articleData: any[]) {
+function initTags(articleMeta: any[]) {
   const tags: any = {};
-  for (let i = 0; i < articleData.length; i++) {
-    const article = articleData[i];
+  for (let i = 0; i < articleMeta.length; i++) {
+    const article = articleMeta[i];
     const articleTags = article.tags;
     if (Array.isArray(articleTags)) {
       articleTags.forEach((articleTag) => {

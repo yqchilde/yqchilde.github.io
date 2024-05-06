@@ -35,13 +35,7 @@ features:
     linkText: 提效工具
 ---
 
-## Hey 👋
-
-```go
-func main() {
-    fmt.Println("👋 Hey! Nice to meet you!")
-}
-```
+<ClientOnly><Heatmap /></ClientOnly>
 
 <style>
 .m-home-layout .image-src:hover {

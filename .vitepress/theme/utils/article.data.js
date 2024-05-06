@@ -7,6 +7,7 @@ export default {
     return articleFiles.map(articleFile => {
       const articleContent = fs.readFileSync(articleFile, 'utf-8');
       const { data } = matter(articleContent);
+
       return {
         ...data,
         path: articleFile.substring(articleFile.lastIndexOf('/posts/') + 6).replace('/README.md', ''),

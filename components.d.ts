@@ -7,6 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AButton: typeof import('@arco-design/web-vue')['Button']
+    AButtonGroup: typeof import('@arco-design/web-vue')['ButtonGroup']
     ACard: typeof import('@arco-design/web-vue')['Card']
     ACol: typeof import('@arco-design/web-vue')['Col']
     AImagePreviewGroup: typeof import('@arco-design/web-vue')['ImagePreviewGroup']
@@ -18,6 +20,7 @@ declare module 'vue' {
     ATag: typeof import('@arco-design/web-vue')['Tag']
     Comment: typeof import('./.vitepress/theme/components/comment.vue')['default']
     FootBefore: typeof import('./.vitepress/theme/components/footBefore.vue')['default']
+    Heatmap: typeof import('./.vitepress/theme/components/heatmap.vue')['default']
     IconShareAlt: typeof import('@arco-design/web-vue/es/icon')['IconShareAlt']
     IconTrophy: typeof import('@arco-design/web-vue/es/icon')['IconTrophy']
     ImageViewer: typeof import('./.vitepress/theme/components/imageViewer.vue')['default']

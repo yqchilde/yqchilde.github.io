@@ -72,7 +72,7 @@ import { useData } from 'vitepress';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { goToLink } from '../utils';
+import { goToLink } from '../utils/utils';
 
 dayjs.extend(relativeTime);
 dayjs.locale('zh-cn');
