@@ -30,24 +30,67 @@ import { useData } from "vitepress"
 import { watch } from "vue"
 const { isDark } = useData();
 
+const weekDaysTemplate: CalHeatmap.Template = DateHelper => {
+    const ALLOWED_DOMAIN_TYPE: CalHeatmap.DomainType[] = ['month'];
+    return {
+        name: 'yyDay',
+        allowedDomainType: ALLOWED_DOMAIN_TYPE,
+        rowsCount: () => 7,
+        columnsCount: (ts) => {
+            // 当前月要额外处理，减少多于空间
+            if (DateHelper.date(ts).startOf('month').valueOf() !== DateHelper.date().startOf('month').valueOf()) {
+                return DateHelper.getWeeksCountInMonth(ts)
+            } else {
+                let firstBlockDate = DateHelper.getFirstWeekOfMonth(ts);
+                // 计算从今天到第一个块的时间间隔
+                let interval = DateHelper.intervals('day', firstBlockDate, DateHelper.date()).length;
+                // 计算需要规划几列
+                let intervalCol = Math.ceil((interval + 1) / 7);
+                return intervalCol;
+            }
+        },
+        mapping: (startTimestamp, endTimestamp) => {
+            const clampStart = DateHelper.getFirstWeekOfMonth(startTimestamp);
+            const clampEnd = DateHelper.getFirstWeekOfMonth(endTimestamp);
+
+            let x = -1;
+            const pivotDay = clampStart.weekday();
+
+            return DateHelper.intervals('day', clampStart, clampEnd).map((ts) => {
+                const weekday = DateHelper.date(ts).weekday();
+                if (weekday === pivotDay) {
+                    x += 1;
+                }
+
+                return {
+                    t: ts,
+                    x,
+                    y: weekday,
+                };
+            });
+        },
+        extractUnit: (ts) => DateHelper.date(ts).startOf('day').valueOf(),
+    };
+};
+
 function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
+    cal.addTemplates(weekDaysTemplate);
     cal.paint(
         {
             theme: theme,
             data: {
                 source: '../../../heatmap.json',
-                // source: articleMeta,
                 type: 'json',
                 x: 'date',
                 y: (datum) => +datum['file'],
                 groupY: 'sum',
             },
             date: {
-                start: new Date('2023-06-01'),
+                start: dayjs().subtract(12, 'month').valueOf(),
                 locale: 'zh',
                 timezone: 'Asia/Shanghai',
             },
-            range: 12,
+            range: 13,
             scale: {
                 color: {
                     type: 'threshold',
@@ -60,7 +103,7 @@ function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
                 gutter: 5,
                 label: { text: 'M月', textAlign: 'middle', position: 'bottom' },
             },
-            subDomain: { type: 'ghDay', radius: 2, width: 16, height: 16, gutter: 5 },
+            subDomain: { type: 'yyDay', radius: 2, width: 16, height: 16, gutter: 5 },
             itemSelector: '#cal-heatmap',
         },
         [
@@ -69,7 +112,7 @@ function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
                 {
                     text: function (timestamp: number, value: number, dayjsDate: dayjs.Dayjs) {
                         if (!value) {
-                            return '';
+                            return dayjsDate.format('YYYY-MM-DD 未更新');
                         } else {
                             return dayjsDate.format('于 YYYY-MM-DD 更新了 ') + value + ' 篇博文';
                         }
@@ -142,6 +185,12 @@ watch(
     align-items: center;
     margin-top: 40px;
     max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .cal-heatmap-container {
+        overflow: auto;
+    }
 }
 
 .cal-heatmap-header {
