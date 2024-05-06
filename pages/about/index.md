@@ -8,7 +8,7 @@ lastUpdated: false
 
 # 博主介绍
 
-欢迎来到YY物语，我叫YY <sup><Badge type="tip" text="yqchilde" class="small"/></sup>
+欢迎来到我的博客，我叫YY <sup><Badge type="tip" text="yqchilde" class="small"/></sup>
 
 我是一名98年软件工程师，主要涉足后端Golang开发，目前工作在济南，工作4年。
 

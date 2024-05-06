@@ -4,7 +4,7 @@ layout: home
 layoutClass: 'm-home-layout'
 
 hero:
-  name: "YY 物语"
+  name: "YY's Blog"
   tagline: 积累如同滴水穿石，知识之泉汇聚成河
   image:
     src: /background.png

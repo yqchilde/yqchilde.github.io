@@ -1,11 +1,12 @@
 ---
-title: "我的博客改版-VitePress"
-description: "vitepress1.0版本发布了，挺好看的，用来搭建一个博客看看"
+title: VitePress博客-主题介绍
+description: vitepress1.0版本发布了，挺好看的，用来搭建一个博客看看
 date: 2024-04-29 20:34:56
-tags: ["Notes"]
+tags:
+  - VitePress
 ---
 
-# 我的博客改版-VitePress
+# VitePress博客-主题介绍
 
 :::tip 😉
 VitePress 1.0版本发布了，挺好看的，用来搭建一个博客看看，之前是Hugo，比较爱折腾。
@@ -41,6 +42,11 @@ VitePress 支持在所有 Markdown 文件中使用 YAML frontmatter，并使用 
 
 采用自动根据目录自动生成，规则看这里：
 
-* https://github.com/yqchilde/yqchilde.github.io/blob/ad645dd5604eb41c6d8de3ef29c0f43de1a10ad5/.vitepress/config/sidebar.ts#L16
+* [sidebar.ts#L16](https://github.com/yqchilde/yqchilde.github.io/blob/ad645dd5604eb41c6d8de3ef29c0f43de1a10ad5/.vitepress/config/sidebar.ts#L16)
+* [sidebar.ts#L91](https://github.com/yqchilde/yqchilde.github.io/blob/ad645dd5604eb41c6d8de3ef29c0f43de1a10ad5/.vitepress/config/sidebar.ts#L91)
 
-* https://github.com/yqchilde/yqchilde.github.io/blob/ad645dd5604eb41c6d8de3ef29c0f43de1a10ad5/.vitepress/config/sidebar.ts#L91
+## heatmap
+
+![img](./1714987487.png)
+
+[点这里看详情](../2024/vitepress-blog-2)
