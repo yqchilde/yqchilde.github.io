@@ -6,6 +6,7 @@ on:
     branches: 
       - main
     paths:
+      - 'posts/**'
       - 'pages/**'
       - 'package.json'
       - '.vitepress/**'
@@ -27,14 +28,19 @@ jobs:
         with: 
           persist-credentials: false
 
+      - name: Install PNpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
       - name: Install Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Build
-        run: npm i && npm run docs:build
+        run: pnpm i && pnpm run docs:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
