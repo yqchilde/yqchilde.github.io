@@ -24,8 +24,6 @@ lines.forEach(line => {
     }
 });
 
-console.log(results);
-
 // 过滤一下同一天内的重复文件
 function filterData(data) {
     // 将数据按日期分组
