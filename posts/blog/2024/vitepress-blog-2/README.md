@@ -21,7 +21,7 @@ tags:
 <template>
     <div class="cal-heatmap-container">
         <div class="cal-heatmap-header">
-            <span class="cal-heatmap-header-title">创作指数</span>
+            <span class="cal-heatmap-header-title">学习指数</span>
             <div class="cal-heatmap-header-direct">
                 <a-button-group shape="round" size="mini">
                     <a-button @click="(e) => { e.preventDefault(); cal.previous(); }">← Prev</a-button>
@@ -29,9 +29,9 @@ tags:
                 </a-button-group>
             </div>
             <div class="cal-heatmap-legend-container">
-                <span class="cal-heatmap-legend-text">不活跃</span>
+                <span class="cal-heatmap-legend-text">懈怠</span>
                 <div id="cal-heatmap-legend"></div>
-                <span class="cal-heatmap-legend-text">活跃</span>
+                <span class="cal-heatmap-legend-text">努力</span>
             </div>
         </div>
         <div id="cal-heatmap"></div>
@@ -40,7 +40,7 @@ tags:
 ```
 
 2. `script` 部分：
-```vue{62}
+```vue{64}
 <script setup lang="ts">
 import CalHeatmap from 'cal-heatmap'
 import Tooltip from 'cal-heatmap/plugins/Tooltip'
@@ -53,7 +53,7 @@ import { useData } from "vitepress"
 import { watch } from "vue"
 const { isDark } = useData();
 
-const weekDaysTemplate: CalHeatmap.Template = DateHelper => {
+const yyDaysTemplate: CalHeatmap.Template = DateHelper => {
     const ALLOWED_DOMAIN_TYPE: CalHeatmap.DomainType[] = ['month'];
     return {
         name: 'yyDay',
@@ -74,8 +74,8 @@ const weekDaysTemplate: CalHeatmap.Template = DateHelper => {
         },
         mapping: (startTimestamp, endTimestamp) => {
             const clampStart = DateHelper.getFirstWeekOfMonth(startTimestamp);
-            const clampEnd = DateHelper.getFirstWeekOfMonth(endTimestamp);
-
+            const clampEnd = dayjs().startOf('day').add(8-dayjs().day(), 'day')
+            
             let x = -1;
             const pivotDay = clampStart.weekday();
 
@@ -92,12 +92,14 @@ const weekDaysTemplate: CalHeatmap.Template = DateHelper => {
                 };
             });
         },
-        extractUnit: (ts) => DateHelper.date(ts).startOf('day').valueOf(),
+        extractUnit: (ts) => {
+            return DateHelper.date(ts).startOf('day').valueOf();
+        },
     };
 };
 
 function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
-    cal.addTemplates(weekDaysTemplate);
+    cal.addTemplates(yyDaysTemplate);
     cal.paint(
         {
             theme: theme,
@@ -110,6 +112,8 @@ function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
             },
             date: {
                 start: dayjs().subtract(12, 'month').valueOf(),
+                min: dayjs("2023-01-01").valueOf(),
+                max: dayjs(),
                 locale: 'zh',
                 timezone: 'Asia/Shanghai',
             },
@@ -134,6 +138,9 @@ function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
                 Tooltip,
                 {
                     text: function (timestamp: number, value: number, dayjsDate: dayjs.Dayjs) {
+                        if (timestamp > Date.now()) {
+                            return dayjsDate.format('别急，这一天还没来🫣')
+                        }
                         if (!value) {
                             return dayjsDate.format('YYYY-MM-DD 未更新');
                         } else {
