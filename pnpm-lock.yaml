@@ -11,7 +11,7 @@ overrides:
 
 patchedDependencies:
   cal-heatmap@4.2.4:
-    hash: jcdizb3tjhdbitqzc5rbe7yy4q
+    hash: op4rpvqjd54le7s3q6tw66ojtm
     path: patches/cal-heatmap@4.2.4.patch
 
 importers:
@@ -32,7 +32,7 @@ importers:
         version: 2.19.0
       cal-heatmap:
         specifier: ^4.2.4
-        version: 4.2.4(patch_hash=jcdizb3tjhdbitqzc5rbe7yy4q)
+        version: 4.2.4(patch_hash=op4rpvqjd54le7s3q6tw66ojtm)
       dayjs:
         specifier: ^1.11.11
         version: 1.11.11
@@ -2594,7 +2594,7 @@ snapshots:
     dependencies:
       fill-range: 7.0.1
 
-  cal-heatmap@4.2.4(patch_hash=jcdizb3tjhdbitqzc5rbe7yy4q):
+  cal-heatmap@4.2.4(patch_hash=op4rpvqjd54le7s3q6tw66ojtm):
     dependencies:
       '@observablehq/plot': 0.6.14
       '@popperjs/core': 2.11.8

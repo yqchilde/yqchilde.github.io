@@ -30,7 +30,7 @@ import { useData } from "vitepress"
 import { watch } from "vue"
 const { isDark } = useData();
 
-const weekDaysTemplate: CalHeatmap.Template = DateHelper => {
+const yyDaysTemplate: CalHeatmap.Template = DateHelper => {
     const ALLOWED_DOMAIN_TYPE: CalHeatmap.DomainType[] = ['month'];
     return {
         name: 'yyDay',
@@ -51,8 +51,8 @@ const weekDaysTemplate: CalHeatmap.Template = DateHelper => {
         },
         mapping: (startTimestamp, endTimestamp) => {
             const clampStart = DateHelper.getFirstWeekOfMonth(startTimestamp);
-            const clampEnd = DateHelper.getFirstWeekOfMonth(endTimestamp);
-
+            const clampEnd = dayjs().startOf('day').add(8-dayjs().day(), 'day')
+            
             let x = -1;
             const pivotDay = clampStart.weekday();
 
@@ -69,12 +69,14 @@ const weekDaysTemplate: CalHeatmap.Template = DateHelper => {
                 };
             });
         },
-        extractUnit: (ts) => DateHelper.date(ts).startOf('day').valueOf(),
+        extractUnit: (ts) => {
+            return DateHelper.date(ts).startOf('day').valueOf();
+        },
     };
 };
 
 function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
-    cal.addTemplates(weekDaysTemplate);
+    cal.addTemplates(yyDaysTemplate);
     cal.paint(
         {
             theme: theme,
@@ -87,6 +89,8 @@ function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
             },
             date: {
                 start: dayjs().subtract(12, 'month').valueOf(),
+                min: dayjs("2023-01-01").valueOf(),
+                max: dayjs(),
                 locale: 'zh',
                 timezone: 'Asia/Shanghai',
             },
@@ -111,9 +115,8 @@ function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
                 Tooltip,
                 {
                     text: function (timestamp: number, value: number, dayjsDate: dayjs.Dayjs) {
-                        // 针对未来的时间单独处理，想一句有趣的提示语
                         if (timestamp > Date.now()) {
-                            return dayjsDate.format('别急，这一天还没来😉')
+                            return dayjsDate.format('别急，这一天还没来🫣')
                         }
                         if (!value) {
                             return dayjsDate.format('YYYY-MM-DD 未更新');
