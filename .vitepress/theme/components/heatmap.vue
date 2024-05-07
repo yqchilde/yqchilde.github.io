@@ -111,6 +111,10 @@ function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
                 Tooltip,
                 {
                     text: function (timestamp: number, value: number, dayjsDate: dayjs.Dayjs) {
+                        // 针对未来的时间单独处理，想一句有趣的提示语
+                        if (timestamp > Date.now()) {
+                            return dayjsDate.format('别急，这一天还没来😉')
+                        }
                         if (!value) {
                             return dayjsDate.format('YYYY-MM-DD 未更新');
                         } else {
