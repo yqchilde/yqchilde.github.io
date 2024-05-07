@@ -1,7 +1,7 @@
 <template>
     <div class="cal-heatmap-container">
         <div class="cal-heatmap-header">
-            <span class="cal-heatmap-header-title">创作指数</span>
+            <span class="cal-heatmap-header-title">学习指数</span>
             <div class="cal-heatmap-header-direct">
                 <a-button-group shape="round" size="mini">
                     <a-button @click="(e) => { e.preventDefault(); cal.previous(); }">← Prev</a-button>
@@ -9,9 +9,9 @@
                 </a-button-group>
             </div>
             <div class="cal-heatmap-legend-container">
-                <span class="cal-heatmap-legend-text">不活跃</span>
+                <span class="cal-heatmap-legend-text">懈怠</span>
                 <div id="cal-heatmap-legend"></div>
-                <span class="cal-heatmap-legend-text">活跃</span>
+                <span class="cal-heatmap-legend-text">努力</span>
             </div>
         </div>
         <div id="cal-heatmap"></div>
