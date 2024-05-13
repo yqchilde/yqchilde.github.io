@@ -4,6 +4,7 @@ outline: false
 showArticleMetadata: false
 editLink: false
 lastUpdated: false
+aside: false
 ---
 
 # 博主介绍
