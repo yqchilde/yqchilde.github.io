@@ -1,10 +1,10 @@
 ---
-title: "KeyMap"
+title: "MKeymap-键盘映射神器"
 description: ""
-date: 2024-04-23 07:48:42
-tags: ["Golang"]
+date: 2024-05-26 19:00:00
+tags: ["Windows"]
 ---
 
-# KeyMap
+# MKeymap-键盘映射神器
 
-KeyMap
+MKeymap-键盘映射神器
