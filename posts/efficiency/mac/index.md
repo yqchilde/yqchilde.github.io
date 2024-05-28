@@ -1,9 +1,7 @@
 ---
-title: "Mac篇"
+sort: 1
+title: "Mac平台"
 showArticleMetadata: false
-showChapterCount: false
 ---
 
-# 这里是frontend mac
-
-test
+<ClientOnly><Redirect route="/keymap"/></ClientOnly>

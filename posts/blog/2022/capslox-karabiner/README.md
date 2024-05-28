@@ -2,7 +2,7 @@
 title: "如何使用 Karabiner 来代替 Capslox 的体验"
 description: "写本文之前已经使用了新方案有 3 个多月了，今日突然想到记录一下，故才有了这篇水文。在寻找替代软件之前一直在使用 Capslox 软件，使用 Capslox 工具都要归结于一把 61 键位的键盘，随着 Capslox 正式版的发布，它收费了，而且不是买断制，由于我只使用了基础热键，故没有参与付费购买，本文将介绍新方案的使用。"
 date: 2022-03-17 20:00:00
-tags: ["Karabiner"]
+tags: ["MacOS"]
 ---
 
 # 如何使用 Karabiner 来代替 Capslox 的体验

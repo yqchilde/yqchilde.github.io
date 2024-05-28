@@ -1,9 +1,7 @@
 ---
-title: "Windows篇"
+sort: 2
+title: "Windows平台"
 showArticleMetadata: false
-showChapterCount: false
 ---
 
-# 这里是frontend windows
-
-test
+<ClientOnly><Redirect route="/keymap"/></ClientOnly>

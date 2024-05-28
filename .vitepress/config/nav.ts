@@ -55,8 +55,8 @@ export const nav: DefaultTheme.NavItem[] = [
             {
                 text: '软件推荐与配置',
                 items: [
-                    { text: 'Mac 平台', link: '/efficiency/mac' },
-                    { text: 'Windows 平台', link: '/efficiency/windows' },
+                    { text: 'Mac 平台', link: '/efficiency/mac/keymap' },
+                    { text: 'Windows 平台', link: '/efficiency/windows/keymap' },
                 ]
             },
         ],
