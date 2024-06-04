@@ -7,7 +7,7 @@
     "@types/node": "^20.12.8",
     "sass": "^1.76.0",
     "unplugin-vue-components": "^0.26.0",
-    "vitepress": "^1.1.4"
+    "vitepress": "^1.2.3"
   },
   "scripts": {
     "docs:dev": "node .vitepress/theme/utils/heatmap.data.js && vitepress dev --host",
