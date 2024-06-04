@@ -13,6 +13,6 @@ export const head: HeadConfig[] = [
   ['link', { rel: 'mask-icon', href: '/favicon.ico', color: '#3eaf7c' }],
   [
     'script',
-    { src: isDevelopment ? '' : 'https://hm.baidu.com/hm.js?9327590ef57d577af3cebe5a982d84b4' }
+    { src: isDevelopment ? '' : 'https://hm.baidu.com/hm.js?28d2c15f874fe87dc4038ad4d40b8a29' }
   ]
 ]
