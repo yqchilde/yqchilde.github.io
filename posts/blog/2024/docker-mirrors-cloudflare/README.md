@@ -1,6 +1,6 @@
 ---
 title: 利用CloudFlare自建Docker镜像站
-description: docker hub国内镜像源都下线，在网络上搜集到了利用CloudFlare自建Docker镜像站的办法
+description: docker hub国内镜像源都下线，在网络上搜集到了利用CloudFlare Workers自建Docker镜像站的办法
 date: 2024-06-20 12:50:06
 tags:
   - Docker
@@ -23,11 +23,15 @@ tags:
 
 有了账号之后获取两个值，账号ID和TOKEN  
 账号ID：可以从Url路径上获取，也可以点开Works和Pages页面右侧获取  
-账号TOKEN：点击右上角->我的个人资料->API令牌->创建令牌->Workers AI->使用模板
+账号TOKEN：点击右上角->我的个人资料->API令牌->创建令牌->编辑Cloudflare Workers->使用模板
 
 ![img](./1718812800.png)
 
 ![img](./1718812801.png)
+
+![img](./1718812802.png)
+
+![img](./1718812803.png)
 
 ## 仓库代码
 
@@ -71,19 +75,19 @@ routes = [
 
 改好之后，点击`Deploy with Workers`按钮进行跳转，然后授权，并填入cloudflare的账号id和token后进行自动部署
 
-![img](./1718812802.png)
+![img](./1718812804.png)
 
 进入到cloudflare的Workers界面就可以看到部署过来的workers了
 
-![img](./1718812803.png)
+![img](./1718812805.png)
 
 workers默认会分配一个域名，但是这个域名可能已经被墙了，如果在国内机器ping不通，那就使用自定义域名吧
 
 先添加一个域名，然后从域名商那边将dns解析到cloudflare，这样就会cloudflare管理了，打开workers设置添加自定义域就可以了，二级域名会自动解析过去
 
-![img](./1718812804.png)
+![img](./1718812806.png)
 
-![img](./1718812805.png)
+![img](./1718812807.png)
 
 ## 效果展示
 
@@ -97,7 +101,7 @@ workers默认会分配一个域名，但是这个域名可能已经被墙了，�
 }
 ```
 
-![img](./1718812806.png)
+![img](./1718812808.png)
 
 ## Github Actions
 
