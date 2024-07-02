@@ -17,6 +17,10 @@ tags:
 我修改地址：https://github.com/yqchilde/cloudflare-docker-proxy
 :::
 
+::: info 补充一条Linux Docker一键安装脚本，阿里源
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+:::
+
 ## 准备账号
 
 既然是基于cloudflare的，那就先去 **[注册](https://www.cloudflare.com/zh-cn/)** 个账号，此处省略 ~
