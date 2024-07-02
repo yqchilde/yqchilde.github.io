@@ -61,7 +61,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/yqchilde/yqchilde.github.io' }
     ],
     footer: {
-      copyright: 'Copyright © 2019-2024 YY\'s Blog | CC BY-NC 4.0 | <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener" style="text-decoration: none;">晋ICP备18003223号-2</a> | <p style="display: inline-flex; align-items: center;"><img src="/gongan.png" style="width: 12px; height: 12px; margin-right: 3px;"><a href="https://beian.mps.gov.cn/#/query/webSearch?code=37011202002231" rel="noreferrer" target="_blank" style="text-decoration: none;">鲁公网安备37011202002231</a></p>'
+      copyright: 'Copyright © 2019-2024 YY\'s Blog | CC BY-NC 4.0 | <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow noopener" style="text-decoration: none;">晋ICP备18003223号-2</a><p style="display: inline-flex; align-items: center;"><img src="/gongan.png" style="width: 12px; height: 12px; margin-right: 3px;"><a href="https://beian.mps.gov.cn/#/query/webSearch?code=37011202002231" rel="noreferrer" target="_blank" style="text-decoration: none;">鲁公网安备37011202002231</a></p>'
     },
     // @ts-ignore
     articleMetadataConfig: {
