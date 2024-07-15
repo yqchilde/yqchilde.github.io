@@ -10,7 +10,7 @@ export const nav: DefaultTheme.NavItem[] = [
         activeMatch: '^/review',
         items: [
             { text: "Golang篇", link: "/review/golang/map" },
-            { text: "Python篇", link: "/review/python/if" },
+            { text: "Python篇", link: "/review/python/pyside6" },
             { text: "Redis篇", link: "/review/redis/interview-1" },
         ]
     },

@@ -4,4 +4,4 @@ title: "Python篇"
 showArticleMetadata: false
 ---
 
-<ClientOnly><Redirect route="/if"/></ClientOnly>
+<ClientOnly><Redirect route="/pyside6"/></ClientOnly>
