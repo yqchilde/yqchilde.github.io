@@ -4,4 +4,4 @@ title: "Mac平台"
 showArticleMetadata: false
 ---
 
-<ClientOnly><Redirect route="/keymap"/></ClientOnly>
+<ClientOnly><Redirect route="/surge"/></ClientOnly>
