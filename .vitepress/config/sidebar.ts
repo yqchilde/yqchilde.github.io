@@ -7,6 +7,7 @@ const sync = fg.sync;
 export const sidebar: DefaultTheme.Sidebar = {
     '/blog': getItemsByDate('posts/blog'),
     '/review': getItemsByCategory('posts/review'),
+    '/softs': getItemsByCategory('posts/softs'),
     '/workflow': getItemsByCategory('posts/workflow'),
     '/efficiency': getItemsByCategory('posts/efficiency'),
 }

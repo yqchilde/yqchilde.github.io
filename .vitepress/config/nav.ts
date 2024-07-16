@@ -6,6 +6,11 @@ export const nav: DefaultTheme.NavItem[] = [
         link: '/nav',
     },
     {
+        text: "博客",
+        link: '/blog',
+        activeMatch: '^/blog',
+    },
+    {
         text: "后端纪事",
         activeMatch: '^/review',
         items: [
@@ -14,13 +19,13 @@ export const nav: DefaultTheme.NavItem[] = [
             { text: "Redis篇", link: "/review/redis/interview-1" },
         ]
     },
-    // {
-    //     text: "源码阅读",
-    //     items: [
-    //         { text: "Golang", link: "/posts/backend/golang/" },
-    //         { text: "PHP", link: "/posts/backend/php/" }
-    //     ]
-    // },
+    {
+        text: "定制软件",
+        activeMatch: '^/softs',
+        items: [
+            { text: "OpenAI", link: "/softs/openai/qt-gpt-sess" },
+        ]
+    },
     {
         text: 'Workflow',
         items: [
@@ -43,11 +48,6 @@ export const nav: DefaultTheme.NavItem[] = [
             },
         ],
         activeMatch: '^/workflow'
-    },
-    {
-        text: "博客",
-        link: '/blog',
-        activeMatch: '^/blog',
     },
     {
         text: '提效工具',
