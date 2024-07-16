@@ -123,11 +123,13 @@ function getItemsByCategory(path: string) {
         // 获取章节标题
         let chapter: string = '';
         let showChapterCount: boolean = true;
+        let showChapterCountName: string = '';
         let needRoute: boolean = false;
         if (fs.existsSync(`${path}/${group}/index.md`)) {
             const { data } = matter.read(`${path}/${group}/index.md`);
             data.title !== undefined ? chapter = data.title : chapter = group;
             data.showChapterCount !== undefined ? showChapterCount = data.showChapterCount : showChapterCount = true;
+            data.showChapterCountName !== undefined ? showChapterCountName = data.showChapterCountName : showChapterCountName = '篇';
             data.needRoute !== undefined ? needRoute = data.needRoute : needRoute = false;
         }
 
@@ -154,7 +156,7 @@ function getItemsByCategory(path: string) {
         })
 
         groups.push({
-            text: `${chapter !== '' ? chapter : group} ${showChapterCount && items.length > 0 ? `(${items.length}篇)` : ''}`,
+            text: `${chapter !== '' ? chapter : group} ${showChapterCount && items.length > 0 ?  `(${items.length}${showChapterCountName})` : ''}`,
             link: `${needRoute ? `/${path}/${group}`.replace('posts/', '') : ''}`,
             items: items,
             // collapsed: items.length < groupCollapsedSize || total > titleCollapsedSize,

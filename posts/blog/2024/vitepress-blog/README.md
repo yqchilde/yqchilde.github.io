@@ -33,6 +33,7 @@ VitePress 支持在所有 Markdown 文件中使用 YAML frontmatter，并使用 
 | showArticleMetadata |     true / false     |      doc      | 是否展示文章主标题下面的信息，就是原创那行                   |
 |     showComment     |     true / false     |      doc      | 是否展示评论                                  |
 |  showChapterCount   |     true / false     |      doc      | 是否展示sidebar上的主目录的文章篇幅数                  |
+|  showChapterCountName   |     默认"篇"     |      doc      | sidebar上的主目录的文章计数名称                  |
 |     isOriginal      |     true / false     |      doc      | 文章是否原创                                  |
 |       author        |                      |      doc      | 文章作者，仅非原创需要写                            |
 |     articleLink     |                      |      doc      | 文章链接，仅非原创需要写，原文链接                       |
