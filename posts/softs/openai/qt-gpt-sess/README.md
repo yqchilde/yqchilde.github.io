@@ -7,6 +7,6 @@ tags: ["OpenAI"]
 
 # GPT SessionID提取刷新和账号测活软件
 
-![img](./1721146277.jpg)
+![img](./1721146277.png)
 
 文档待补充
