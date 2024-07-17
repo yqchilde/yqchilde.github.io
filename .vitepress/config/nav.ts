@@ -37,7 +37,7 @@ export const nav: DefaultTheme.NavItem[] = [
             {
                 items: [
                     { text: '常用正则整理', link: '/workflow/utils/regexp' },
-                    { text: '常用片段整理', link: '/workflow/utils/snippets' }
+                    { text: '常用代码片段', link: '/workflow/utils/snippets' }
                 ]
             },
             {
