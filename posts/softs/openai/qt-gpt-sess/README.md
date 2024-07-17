@@ -1,5 +1,5 @@
 ---
-title: "GPT SessionID提取刷新和账号测活软件"
+title: "GPT批量提sess和测活"
 description: "GPT SessionID提取刷新和账号测活软件"
 date: 2024-07-16 23:40:07
 tags: ["OpenAI"]
