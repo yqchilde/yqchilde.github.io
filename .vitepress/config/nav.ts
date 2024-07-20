@@ -23,7 +23,7 @@ export const nav: DefaultTheme.NavItem[] = [
         text: "定制软件",
         activeMatch: '^/softs',
         items: [
-            { text: "OpenAI", link: "/softs/openai/qt-gpt-sess" },
+            { text: "OpenAI", link: "/softs/openai" },
         ]
     },
     {
