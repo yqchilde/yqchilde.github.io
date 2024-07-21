@@ -17,6 +17,7 @@
     "@antv/g2plot": "^2.4.31",
     "@giscus/vue": "^3.0.0",
     "@mdit-vue/shared": "^2.1.2",
+    "artplayer": "^5.1.6",
     "blueimp-md5": "^2.19.0",
     "cal-heatmap": "^4.2.4",
     "dayjs": "^1.11.11",
