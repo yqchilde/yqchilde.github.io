@@ -8,13 +8,17 @@ tags: ["OpenAI"]
 
 # GPT SessionID提取刷新和账号测活软件
 
-## 1. 软件介绍
+::: tip 软件介绍
+* 软件类型：**付费（需授权）**
+* 软件作用：👨‍💻帮你快速获取或刷新sess，refresh_token，以及账号测活
+* **用前必看**：[📌 软件自述文件](./soft-used-readme)
+:::
 
-## 2. 使用流程
+## 1. 使用视频
 
-[📌 使用前必看](./soft-used-readme)
+<ClientOnly><ArtPlayer url='https://artplayer.org/assets/sample/video.mp4'/></ClientOnly>
 
-## 3. 版本日志
+## 2. 版本日志
 
 :::details 版本更新日志
 v1.1.1 (2024-07-16)
