@@ -5,7 +5,7 @@ layoutClass: 'm-home-layout'
 
 hero:
   name: "YY's Blog"
-  tagline: 积累如同滴水穿石，知识之泉汇聚成河
+  tagline: 闲记，札记，好记性不如烂键盘
   image:
     src: /background.png
     alt: background
@@ -22,7 +22,7 @@ features:
     title: 后端纪事
     details: 整理后端常用知识点<small>（面试八股文）</small><br />不妥之处，敬请雅正
     link: /review
-    linkText: 前端常用知识
+    linkText: 后端常用知识
   - icon: 💡
     title: Workflow
     details: 在工作中学到的一切<small>（常用库/工具/奇淫技巧等）</small><br />配合 CV 大法来更好的摸鱼
