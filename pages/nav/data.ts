@@ -52,7 +52,7 @@ export const NAV_DATA: NavData[] = [
       {
         icon: './favicon.ico',
         title: 'AST Explorer',
-        desc: '一个使用Go语言开发的开源推荐系统',
+        desc: '一个在线的AST（抽象语法树）查看器',
         link: 'https://astexplorer.net',
         badge: '开源'
       },
