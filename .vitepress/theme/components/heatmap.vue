@@ -25,6 +25,7 @@ import LegendLite from 'cal-heatmap/plugins/LegendLite'
 import CalendarLabel from 'cal-heatmap/plugins/CalendarLabel'
 import 'cal-heatmap/cal-heatmap.css'
 import dayjs from 'dayjs'
+import heatmapData from '../../../heatmap.json'
 
 import { useData } from "vitepress"
 import { watch } from "vue"
@@ -81,7 +82,8 @@ function paint(cal: CalHeatmap, theme: 'light' | 'dark') {
         {
             theme: theme,
             data: {
-                source: '../../../heatmap.json',
+                // source: '../../../heatmap.json',
+                source: heatmapData,
                 type: 'json',
                 x: 'date',
                 y: (datum) => +datum['file'],
