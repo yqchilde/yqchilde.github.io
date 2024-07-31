@@ -12,10 +12,10 @@ import { NAV_DATA } from './data'
 </script>
 <style src="./style.scss"></style>
 
-# 后端导航
+# 工具导航
 
 ::: info
-* 未完待续...
+* 🤔 整理本人生活工作中常用的一些站点
 :::
 
 <MNavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>
