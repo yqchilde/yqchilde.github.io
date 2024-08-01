@@ -1,12 +1,11 @@
 ---
-description: 导航
-layoutClass: m-nav-layout
-outline: [2, 3, 4]
+title: Feeds-Sub
+outline: false
 showArticleMetadata: false
 editLink: false
 showComment: false
 ---
 
-# 工具导航
+# Feeds-Sub
 
 <ClientOnly><FeedsSub /></ClientOnly>
