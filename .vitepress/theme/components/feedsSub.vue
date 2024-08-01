@@ -121,7 +121,7 @@ function collectItemInfo(name?: string) {
     });
   }
 
-  state.years.sort((a, b) => parseInt(b) - parseInt(a));
+  state.years.sort((a, b) => parseInt(b) - parseInt(a)); // 这里修改为倒序排序
 
   // 重置页码
   state.currentPage = 1;
@@ -137,7 +137,7 @@ const paginatedItemsByYear = computed(() => {
   let result: { [key: string]: FeedsItem[] } = {};
   let count = 0;
 
-  // 按年份降序排序
+  // 按年份倒序排序
   const sortedYears = state.years.slice().sort((a, b) => parseInt(b) - parseInt(a));
 
   for (const year of sortedYears) {
