@@ -4,8 +4,8 @@ outline: false
 showArticleMetadata: false
 editLink: false
 showComment: false
+aside: false
+layout: page
 ---
-
-# Feeds-Sub
 
 <ClientOnly><FeedsSub /></ClientOnly>
