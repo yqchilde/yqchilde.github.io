@@ -52,4 +52,10 @@ features:
   justify-content: flex-end;
   align-items: end;
 }
+
+@media (min-width: 768px) {
+  .VPHome {
+    margin-bottom: 50px !important;
+  }
+}
 </style>
