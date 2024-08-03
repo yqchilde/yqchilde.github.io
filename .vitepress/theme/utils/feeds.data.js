@@ -32,6 +32,6 @@ let feeds = [
         }
     }
 
-    // Write to the file links_tmp.json
-    fs.writeFileSync('links_tmp.json', JSON.stringify(result, null, 0));
+    // Write to the file feeds-sub.json
+    fs.writeFileSync('feeds-sub.json', JSON.stringify(result, null, 0));
 })();

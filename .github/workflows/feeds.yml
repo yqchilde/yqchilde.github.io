@@ -1,0 +1,41 @@
+name: Gen Feeds Json
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '1 */2 * * *'
+
+permissions: 
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install PNpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Build
+        run: pnpm i && node .vitepress/theme/utils/feeds.data.js && mv feeds-sub.json dist
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository-name: yqchilde/yqchilde.github.io
+          branch: gh-pages
+          folder: dist

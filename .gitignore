@@ -5,6 +5,7 @@ node_modules/
 .obsidian/
 dist/
 heatmap.json
+feeds-sub.json
 components.d.ts
 
 .vitepress/cache/

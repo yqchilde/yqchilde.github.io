@@ -63,6 +63,10 @@ export const nav: DefaultTheme.NavItem[] = [
         activeMatch: '^/efficiency'
     },
     {
+        text: 'Feeds',
+        link: '/feeds-sub'
+    },
+    {
         text: 'About',
         link: '/about'
     }

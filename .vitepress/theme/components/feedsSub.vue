@@ -49,7 +49,7 @@
 <script setup lang="ts">
 import { reactive, onMounted, computed } from 'vue'
 import dayjs from "dayjs"
-import feeds from "../../../links.json"
+import feeds from "../../../feeds-sub.json"
 
 export interface FeedsItem {
   name: string  // 订阅名称
