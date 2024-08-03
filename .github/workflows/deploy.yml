@@ -41,7 +41,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Build
-        run: pnpm i && pnpm run docs:build && mv heatmap.json dist
+        run: pnpm i && pnpm run docs:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
