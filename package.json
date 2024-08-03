@@ -10,8 +10,8 @@
     "vitepress": "^1.2.3"
   },
   "scripts": {
-    "docs:dev": "node .vitepress/theme/utils/heatmap.data.js && vitepress dev --host",
-    "docs:build": "node .vitepress/theme/utils/heatmap.data.js && vitepress build"
+    "docs:dev": "node .vitepress/theme/utils/init.data.js && vitepress dev --host",
+    "docs:build": "node .vitepress/theme/utils/init.data.js && vitepress build"
   },
   "dependencies": {
     "@antv/g2plot": "^2.4.31",
