@@ -4,9 +4,9 @@ import Parser from 'rss-parser';
 let parser = new Parser();
 
 let feeds = [
-    "https://www.manjusaka.blog/atom.xml",
     "https://weekly.tw93.fun/rss.xml",
     "https://blog.j2gg0s.com/feed.xml",
+    "https://tech.meituan.com/feed/",
     "https://tech.qimao.com/rss/",
     "https://wechat2rss.xlab.app/feed/f3a42bd249ec6e8834ae761d8d0f85a949950944.xml",
 ];
