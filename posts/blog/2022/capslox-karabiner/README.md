@@ -26,13 +26,13 @@ karabiner://karabiner/assets/complex_modifications/import?url=https://raw.github
 3. 跳转至Karabiner-Elements并导入
 4. 在软件菜单项 `Complex modifications` 中点击左下角 `Add rule` 启用该项目全部功能
 
-![img](./202211091640796.jpg)
+![img](./202211091640796.png)
 
 **注意：**
 
 如果要外接键盘，需要将command键位与option键位互换，如下：
 
-![img](./202211091641436.jpg)
+![img](./202211091641436.png)
 
 ## 认识键盘符号
 
