@@ -50,5 +50,4 @@ function filterData(data) {
 
 const filteredData = filterData(results);
 
-// fs.writeFileSync('heatmap.json', JSON.stringify(results, null, 2))
-fs.writeFileSync('heatmap.json', JSON.stringify(filteredData))
+fs.writeFileSync('heatmap-data.json', JSON.stringify(filteredData))

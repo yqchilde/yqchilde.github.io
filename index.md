@@ -5,7 +5,7 @@ layoutClass: 'm-home-layout'
 
 hero:
   name: "YY's Blog"
-  tagline: 闲记，札记，好记性不如烂键盘
+  tagline: 闲记，杂记，好记性不如烂键盘
   image:
     src: /background.png
     alt: background

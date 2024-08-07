@@ -7,10 +7,11 @@
     "@types/node": "^20.12.8",
     "sass": "^1.76.0",
     "unplugin-vue-components": "^0.26.0",
-    "vitepress": "^1.2.3"
+    "vitepress": "^1.3.2"
   },
   "scripts": {
-    "docs:dev": "node .vitepress/theme/utils/init.data.js && vitepress dev --host",
+    "docs:dev": "vitepress dev --host",
+    "docs:gen": "node .vitepress/theme/utils/init.data.js",
     "docs:build": "node .vitepress/theme/utils/init.data.js && vitepress build"
   },
   "dependencies": {

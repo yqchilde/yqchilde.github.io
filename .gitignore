@@ -4,8 +4,8 @@ node_modules/
 .env
 .obsidian/
 dist/
-heatmap.json
-feeds-sub.json
+heatmap-data.json
+feeds-sub-data.json
 components.d.ts
 
 .vitepress/cache/

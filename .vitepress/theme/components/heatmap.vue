@@ -25,7 +25,7 @@ import LegendLite from 'cal-heatmap/plugins/LegendLite'
 import CalendarLabel from 'cal-heatmap/plugins/CalendarLabel'
 import 'cal-heatmap/cal-heatmap.css'
 import dayjs from 'dayjs'
-import heatmapData from '../../../heatmap.json'
+import heatmapData from '../../../heatmap-data.json'
 
 import { useData } from "vitepress"
 import { watch } from "vue"
