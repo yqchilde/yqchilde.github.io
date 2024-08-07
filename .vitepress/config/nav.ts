@@ -20,6 +20,13 @@ export const nav: DefaultTheme.NavItem[] = [
         ]
     },
     {
+        text: "逆向爬虫",
+        activeMatch: '^/reverse-crawler',
+        items: [
+            { text: "JS逆向从入门到放弃", link: "/reverse-crawler/js" },
+        ]
+    },
+    {
         text: "定制软件",
         activeMatch: '^/softs',
         items: [
@@ -63,7 +70,7 @@ export const nav: DefaultTheme.NavItem[] = [
         activeMatch: '^/efficiency'
     },
     {
-        text: 'Feeds',
+        text: 'FeedsSub',
         link: '/feeds-sub'
     },
     {
