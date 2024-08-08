@@ -51,6 +51,7 @@ export const nav: DefaultTheme.NavItem[] = [
                 items: [
                     { text: 'Git 命令清单', link: '/workflow/git/command' },
                     { text: 'Git 常用命令', link: '/workflow/git/common-command' },
+                    { text: 'Git 多账户配置', link: '/workflow/git/multi-account' }
                 ]
             },
         ],

@@ -1,4 +1,5 @@
 ---
+sort: 1
 title: "Git 命令清单"
 date: 2024-04-25 08:44:12
 tags: [git]
