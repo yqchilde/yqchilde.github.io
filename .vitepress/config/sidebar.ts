@@ -10,7 +10,7 @@ export const sidebar: DefaultTheme.Sidebar = {
     '/softs': getItemsByCategory('posts/softs'),
     '/workflow': getItemsByCategory('posts/workflow'),
     '/efficiency': getItemsByCategory('posts/efficiency'),
-    '/reverse-crawler': getItemsByCategory('posts/reverse-crawler'),
+    '/reverse-engineering': getItemsByCategory('posts/reverse-engineering'),
 }
 
 // 定义新类型，继承DefaultTheme.SidebarItem，并增加新字段

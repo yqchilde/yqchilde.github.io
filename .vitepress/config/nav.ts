@@ -11,7 +11,7 @@ export const nav: DefaultTheme.NavItem[] = [
         activeMatch: '^/blog',
     },
     {
-        text: "后端纪事",
+        text: "后端笔记",
         activeMatch: '^/review',
         items: [
             { text: "Golang篇", link: "/review/golang/map" },
@@ -20,10 +20,10 @@ export const nav: DefaultTheme.NavItem[] = [
         ]
     },
     {
-        text: "逆向爬虫",
-        activeMatch: '^/reverse-crawler',
+        text: "逆向笔记",
+        activeMatch: '^/reverse-engineering',
         items: [
-            { text: "JS逆向从入门到放弃", link: "/reverse-crawler/js" },
+            { text: "JS逆向从入门到放弃", link: "/reverse-engineering/js" },
         ]
     },
     {
