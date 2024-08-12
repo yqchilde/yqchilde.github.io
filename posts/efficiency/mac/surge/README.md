@@ -1,4 +1,5 @@
 ---
+sort: 1
 title: "Surge配置"
 description: "对我而言，Surge就是MacOS上最好用的网络科学工具"
 date: 2024-07-14 22:01:42
