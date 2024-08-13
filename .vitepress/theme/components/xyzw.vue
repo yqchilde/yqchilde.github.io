@@ -1,7 +1,9 @@
 <template>
-    <div style="margin-top: 100px;">已完成「宝箱达人」轮数：{{ data.totalNumberRounds }}</div>
-    <div>当前总积分{{ data.totalScore }} 当前轮进度：{{ data.currentRoundProgress }} / 8000，距离下一轮：8000，处于第{{ }}轮，第{{ }}奖励阶段</div>
-    <div>最后开箱进度：0/10 青铜宝箱</div>
+    <div style="margin-left: 50px;">
+        <div style="margin-top: 100px;">已完成「宝箱达人」轮数：{{ data.currentRoundProgress }}</div>
+    <div>当前总积分{{ data.totalScore }} 当前轮进度：{{ data.retfen }} / 8000，距离下一轮：8000，处于第{{ data.totalNumberRounds
+        }}轮，第{{ data.jieduanshu }}奖励阶段</div>
+    <div>最后开箱进度：{{ data.retJindu }} / {{ data.retType }}</div>
     <div>累计使用宝箱数量</div>
     <div>
         青铜宝箱：{{ data.qingTongChest }}
@@ -9,6 +11,9 @@
         铂金宝箱：{{ data.bojinChest }}
         钻石宝箱：{{ data.zuanShiChest }}
         木质宝箱：{{ data.muZhiChest }}
+    </div>
+
+    <button style="margin-left: 100px; margin-top: 30px;" @click="upload">upload</button>
     </div>
 </template>
 
@@ -31,6 +36,9 @@ interface ChestData {
     totalScore: number,               // 总积分   
     type: number,                     // 索引
     retType?: string,                 // 索引
+    retJindu?: number,               // 索引
+    jieduanshu?: number,            // 索引
+    retfen?: number,                // 索引
 }
 
 const data = reactive<ChestData>({
@@ -43,7 +51,7 @@ const data = reactive<ChestData>({
     zuanShiChest: 0,                // 钻石宝箱
     jinDuScore: 88,                 // 进度积分
     totalScore: 0,                  // 总积分
-    type: 1,                        // 索引
+    type: 0,                        // 索引
     retType: '10 青铜宝箱'
 });
 
@@ -79,7 +87,8 @@ function o(...n: any) {
     let zuanshiChestCount = 0;
     let selectType = type;
     let totalScoreS = totalScore;
-    for (var t = totalScoreWithoutJinDu, isCompleted = false, b = 0; totalScoreS >= 10 && !isCompleted;) {
+    let b = 0;
+    for (var t = totalScoreWithoutJinDu, isCompleted = false; totalScoreS >= 10 && !isCompleted;) {
         for (var curType = selectType; curType < boxes.length; curType++) {
             if (!(totalScoreS >= boxes[curType].points)) {
                 b = curType;
@@ -205,13 +214,30 @@ function startCalculate() {
         retjindu: t.jindu,
         retfen: a,
         totalNumberRounds: Math.ceil(t.fen / 8e3),
-        jieduanshu: 0,
+        jieduanshu: o,
         retType: chestTypes[t.type],
-        currentRoundProgress: t.fen / 8e3,
+        currentRoundProgress: Math.floor(t.fen / 8e3)
     }
 
 
     console.log('finish data: ', newData);
+
+    data.muZhiChest = newData.muZhiChest;
+    data.qingTongChest = newData.qingTongChest;
+    data.huangJinChest = newData.huangJinChest;
+    data.bojinChest = newData.bojinChest;
+    data.zuanShiChest = newData.zuanShiChest;
+    data.retJindu = newData.retjindu;
+    data.retfen = newData.retfen;
+    data.totalNumberRounds = newData.totalNumberRounds;
+    data.jieduanshu = newData.jieduanshu;
+    data.retType = newData.retType;
+    data.currentRoundProgress = newData.currentRoundProgress;
+    console.log('finish data: ', data);
+}
+
+function upload() {
+    
 }
 </script>
 
