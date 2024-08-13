@@ -1,10 +1,11 @@
 ---
-title: 咸鱼之王
+title: xyzw
 outline: false
 showArticleMetadata: false
 editLink: false
 showComment: false
 aside: false
+navbar: false
 layout: page
 ---
 
