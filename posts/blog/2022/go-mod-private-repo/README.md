@@ -1,48 +1,60 @@
 ---
-title: "GoModule添加gitlab私有仓库"
-description: "本篇记载了如何添加 gitlab 私有仓库到 go mod 中使用，并且可以使用 go get 命令获取到私有仓库的依赖。"
+title: "GoModule添加私有仓库(包会)"
+description: "本篇记载了如何添加gitlab/github私有仓库到go mod中使用，并且可以使用go get命令获取到私有仓库的依赖。"
 date: 2022-04-17 22:38:34
 tags: ["Golang"]
 ---
 
-# GoModule添加gitlab私有仓库
+# GoModule添加私有仓库(包会)
 
-## 1. 设置env
+::: tip
+GoModule添加私有仓库只需要三步就搞定了👌  
+1.设置go env😯  
+2.配置ssh秘钥😅  
+3.全局替换https请求为ssh请求😆
+:::
+
+## 1. 设置go env
 
 ```bash
-# 设置私有仓库的git地址
-go env -w GOPRIVATE="git@gitlab.xxx.cn"
+# 1. (设置私有仓库的git地址，这要看你的go.mod中的私有仓库地址)
+# 比如gitlab的私有仓库是 https://gitlab.xxx.cn，就如下设置
+go env -w GOPRIVATE="https://gitlab.xxx.cn"
+# 如果是github的私有仓库，比如 https://github.com/company/repo，就如下设置
+go env -w GOPRIVATE="https://github.com/company"
 
-# 允许设置不安全访问，配置后可请求到 http 地址的仓库
-go env -w GOINSECURE="gitlab.xxx.cn"
-
+# 2. (xxx和上面地址一样，其实执行完1，GONOPROXY和GONOSUMDB会自动设置，可以go env查看)
 # 设置请求该地址不需要代理，即GOPROXY
-go env -w GONOPROXY="gitlab.xxx.cn"
-
+go env -w GONOPROXY="xxx"
 # 设置不验证sum包的签名
-go env -w GONOSUMDB="gitlab.xxx.cn"
-```
+go env -w GONOSUMDB="xxx"
 
-## 2. 配置秘钥
+# 3. (这个设置的前提是你公司的gitlab没有配置https)
+# 允许设置不安全访问，跳过证书校验，配置后可请求到 http 地址的仓库
+go env -w GOINSECURE="xxx"
+``` 
 
-如果要拉取的库是私有的，需要配置秘钥，可以使用以下命令：
+## 2. 配置ssh秘钥
 
-```bash
-# 1. 创建私有仓库的秘钥 （该步骤省略，每个平台不一样）
+推荐看一下我写的这篇文章，文章详情请点击：👉 [Git 多账户配置](../../workflow/git/multi-account)
 
-# 2. 设置秘钥
-$ git config --global http.extraheader "PRIVATE-TOKEN:上面配置的秘钥"
-```
+## 3. 全局替换https请求为ssh请求
 
-## 3. 全局替换ssh请求为http请求
-
-这一步是为了解决不方便用ssh拉取时，选用http拉取
+`go mod tidy/download` 拉取包时默认都是https请求，所以需要替换为ssh请求，如下：
 
 ```bash
-$ git config --global url."git@gitlab.xxx.cn".insteadOf "https://gitlab.xxx.cn"
+# gitlab
+$ git config --global url."ssh:git@gitlab-company".insteadOf "https://gitlab.xxx.cn"
+
+# github的同理
+$ git config --global url."ssh:git@github-company".insteadOf "https://github.com"
 ```
 
-## 4. 配置 .netrc
+**现在已经可以正常拉到私有仓库包了👌**
+
+## 4. gitlab额外配置.netrc
+
+*第四大步骤只需要gitlab私有仓库阅览，github的无需阅读*
 
 这一步可以直接省略第 2、3 两个步骤，直接使用 .netrc 文件（文件路径： ~/.netrc ），如下：
 
