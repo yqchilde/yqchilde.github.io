@@ -44,10 +44,10 @@ go env -w GOINSECURE="xxx"
 
 ```bash
 # gitlab
-$ git config --global url."ssh:git@gitlab-company".insteadOf "https://gitlab.xxx.cn"
+$ git config --global url."ssh://git@gitlab-company".insteadOf "https://gitlab.xxx.cn"
 
 # github的同理
-$ git config --global url."ssh:git@github-company".insteadOf "https://github.com"
+$ git config --global url."ssh://git@github-company".insteadOf "https://github.com"
 ```
 
 **现在已经可以正常拉到私有仓库包了👌**
