@@ -31,6 +31,7 @@ export const nav: DefaultTheme.NavItem[] = [
         activeMatch: '^/softs',
         items: [
             { text: "OpenAI", link: "/softs/openai" },
+            { text: "Obsidian", link: "/softs/obsidian" },
         ]
     },
     {
