@@ -15,5 +15,12 @@ export default defineConfig({
     ssr: { noExternal: ['@arco-design/web-vue'] },
     build: {
         chunkSizeWarningLimit: 1500
+    },
+    css: { 
+        preprocessorOptions: { 
+            scss: { 
+                api: 'modern-compiler', // or 'modern' 
+            }, 
+        }, 
     }
 });
