@@ -44,7 +44,7 @@ vscode新建文件，命名surge-custom.conf，将以下配置粘贴进去，然
 ![img](./1720965607.png)
 
 ::: details 配置详情，点击展开
-```conf
+```txt
 [General]
 # > 日志级别
 loglevel = notify
@@ -161,7 +161,7 @@ FINAL,🐟 漏网之鱼
 
 Panels模块是在Surge(2814版本新增的)，找到几个网友分享的，具体干啥用的点开看说明吧
 
-```conf
+```txt
 https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.sgmodule
 https://whatshub.top/sgmodule/gpt.sgmodule
 https://whatshub.top/sgmodule/ip-api.sgmodule
@@ -169,3 +169,12 @@ https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net
 https://whatshub.top/sgmodule/media.sgmodule
 https://raw.githubusercontent.com/TributePaulWalker/Profiles/main/Surge/Module/Surge_ConnectivityTest.sgmodule
 ```
+
+## 排错指南
+
+1. https://sub-store.vercel.app 是搭建在 vercel 上的, 请自己保证能正常访问(分流和节点自己处理)
+2. 确保模块和脚本都下载成功（由于网络问题可以先借助clash让脚本下载成功）
+3. 浏览器中访问 https://sub.store/api/utils/env (注意 这是 https) 应该可以看到版本号
+4. 如果报错, 尝试访问 http://sub.store/api/utils/env (注意 这是 http) 如果成功 那就是 MitM/证书信任的问题
+5. 如果还是不行 一般是因为请求没有进重写, 请检查是否开启了重写和脚本功能(不同的 app 可能会有差异, 总之得开启功能)
+6. 以上都不行的话，建议使用工具彻底卸载surge，重新安装试试
