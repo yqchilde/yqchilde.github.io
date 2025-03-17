@@ -130,6 +130,14 @@ README下文将用以下符号来表示按键位及映射键位，其代表释�
 | `⇪` `-` | `f11` | f11按键 |
 | `⇪` `=` | `f12` | f12按键 |
 
+## 问题记录
+
+1. 如果发现 `F1` 按键不生效，进行如下配置
+
+![img](./1742182213.png)
+
+![img](./1742182208.png)
+
 ## 参考项目
 
 - [https://github.com/BryanHoo/Capslock-Plus](https://github.com/BryanHoo/Capslock-Plus)
