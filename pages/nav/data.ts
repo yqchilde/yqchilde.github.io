@@ -80,6 +80,12 @@ export const NAV_DATA: NavData[] = [
         title: 'Wechat Versions',
         desc: 'Windows微信历史版本收集仓库',
         link: 'https://github.com/tom-snow/wechat-windows-versions',
+      },
+      {
+        icon: "https://getzlib.com/favicon.ico",
+        title: '获取 Z-Library',
+        desc: '查找最新的 Z-Library 可用链接',
+        link: 'https://getzlib.com/zh',
       }
     ]
   },

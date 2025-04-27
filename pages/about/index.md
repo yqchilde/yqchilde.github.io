@@ -11,7 +11,7 @@ aside: false
 
 欢迎来到我的博客，我叫YY <sup><Badge type="tip" text="yqchilde" class="small"/></sup>
 
-我是一名98年软件工程师，主要涉足后端Golang开发，目前工作在济南，工作4年。
+我是一名98年软件工程师，主要涉足后端Golang开发，目前工作在济南，工作5年。
 
 初中就进入了编程的世界，搞过易语言(中文PC语言)，写过E4A(中文Android语言)，大学学了PHP，后来自学了Golang，现在会写写 Golang+Python+Js。
 

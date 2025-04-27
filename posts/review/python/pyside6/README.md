@@ -1,4 +1,5 @@
 ---
+sort: 1
 title: "PySide6开发技巧"
 description: "暂时记录一些PySide6开发的一些小技巧，具体PySide6开发学习还请到B站学习"
 date: 2024-07-15 19:37:43
