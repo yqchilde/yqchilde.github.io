@@ -32,9 +32,9 @@ jobs:
           persist-credentials: false
 
       - name: Install PNpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 10
 
       - name: Install Node
         uses: actions/setup-node@v4
