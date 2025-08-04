@@ -4,8 +4,8 @@
     "@arco-design/web-vue": "^2.57.0",
     "@arco-plugins/vite-vue": "^1.4.5",
     "@types/blueimp-md5": "^2.18.2",
-    "@types/node": "^20.17.24",
-    "sass": "^1.85.1",
+    "@types/node": "^20.19.9",
+    "sass": "^1.89.2",
     "unplugin-vue-components": "^0.26.0",
     "vitepress": "^1.6.3"
   },
@@ -15,21 +15,21 @@
     "docs:build": "node .vitepress/theme/utils/init.data.js && vitepress build"
   },
   "dependencies": {
-    "@antv/g2plot": "^2.4.32",
+    "@antv/g2plot": "^2.4.33",
     "@giscus/vue": "^3.1.1",
-    "@mdit-vue/shared": "^2.1.3",
-    "artplayer": "^5.2.2",
+    "@mdit-vue/shared": "^2.1.4",
+    "artplayer": "^5.2.5",
     "autoprefixer": "^10.4.21",
     "blueimp-md5": "^2.19.0",
     "cal-heatmap": "^4.2.4",
     "dayjs": "^1.11.13",
     "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.6",
     "rss-parser": "^3.13.0",
     "tailwindcss": "^3.4.17",
-    "vite": "^5.4.14",
-    "vue": "^3.5.13"
+    "vite": "^5.4.19",
+    "vue": "^3.5.18"
   },
   "pnpm": {
     "overrides": {
