@@ -7,7 +7,7 @@ tags: ["Windows"]
 
 # 美化Windows Terminal并增加自动提示
 
-如果是 Win11 自带了 Windows Terminal，如果是 Win10 先去 Mincrosoft Store 里下载，下载好了进行下列步骤
+如果是 Win11 自带了 Windows Terminal，如果是 Win10 先去 Mincrosoft Store 里下载，下载好了进行下列步骤，以下方式二选一，博主倾向于使用`oh-my-zsh`。
 
 ## 1. oh-my-posh
 
@@ -173,3 +173,14 @@ Windows Registry Editor Version 5.00
 
 效果如图：
 ![img](./1716816029.png)
+
+
+### 配置VsCode默认打开终端
+
+终端 -> 选择默认配置文件 -> Git Bash
+
+### 配置Goland默认打开终端
+
+Settings -> Tools -> Terminal -> Shell Path
+
+设置为合适的路径，可以从Windows Termianl中拷贝，比如我的 `D:\Softs\Git\usr\bin\bash.exe -i -l`
