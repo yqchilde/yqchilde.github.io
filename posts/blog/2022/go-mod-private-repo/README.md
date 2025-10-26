@@ -69,3 +69,7 @@ machine gitlab.xxx.cn login 用户名 password 上面设置的秘钥
 # 因为由于gitlab的限制，最多只能拉取到一个层级，即 gitlab.xxx.cn/a/b.git
 $ go get -u gitlab.xxx.cn/a/b/c.git
 ```
+
+## 20250901补充
+
+如果你发现使用`git config --global url."ssh://git@github-company".insteadOf "https://github.com"`没生效，那要去看一下`vim ~/.gitconfig`，可能是配置了多次不同的冲突了，删掉就行
