@@ -19,6 +19,11 @@ export type SidebarItem = DefaultTheme.SidebarItem & {
     sort?: number
 };
 
+// 去除文件夹名前面的数字前缀
+function removeNumberPrefix(folderName: string): string {
+    return folderName.replace(/^\d+-/, '');
+}
+
 // 根据 posts/分类/年份/标题/README.md的目录格式, 获取侧边栏分组及分组下标题
 // 组成路由 => /分类/年份/标题
 function getItemsByDate(path: string) {
@@ -51,7 +56,7 @@ function getItemsByDate(path: string) {
                     // 向置顶分组前追加标题
                     topArticleItems.unshift({
                         text: data.title,
-                        link: `/${path}/${year}/${title}`.replace('posts/', ''),
+                        link: `/${path}/${year}/${removeNumberPrefix(title)}`.replace('posts/', ''),
                         date: data.date,
                         sort: data.sort,
                     });
@@ -60,7 +65,7 @@ function getItemsByDate(path: string) {
                 // 向年份分组前追加标题
                 articleItems.unshift({
                     text: data.title,
-                    link: `/${path}/${year}/${title}`.replace('posts/', ''),
+                    link: `/${path}/${year}/${removeNumberPrefix(title)}`.replace('posts/', ''),
                     date: data.date,
                     sort: data.sort,
                 });
@@ -149,7 +154,7 @@ function getItemsByCategory(path: string) {
                 // 向前追加标题
                 items.push({
                     text: data.title,
-                    link: `/${path}/${group}/${title}`.replace('posts/', ''),
+                    link: `/${path}/${group}/${removeNumberPrefix(title)}`.replace('posts/', ''),
                     date: data.date,
                     sort: data.sort,
                 });
