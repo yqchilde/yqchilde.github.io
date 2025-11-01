@@ -1,10 +1,37 @@
 import { defineConfig } from 'vitepress'
-import { head } from './config/head'
-import { nav } from './config/nav'
-import { sidebar } from './config/sidebar'
-import { markdown } from './config/markdown'
-import { metaData } from './config/metadata'
-import { algolia } from './config/algolia'
+import { head } from './config/head.js'
+import { nav } from './config/nav.js'
+import { sidebar } from './config/sidebar.js'
+import { markdown } from './config/markdown.js'
+import { metaData } from './config/metadata.js'
+import { algolia } from './config/algolia.js'
+import fg from 'fast-glob'
+import path from 'path'
+
+// 生成URL重写规则，去掉标题中的数字前缀
+function generateRewrites() {
+  const rewrites: Record<string, string> = {}
+  
+  // 处理posts目录下的文件
+  const postFiles = fg.sync('posts/**/*/README.md', { cwd: process.cwd() })
+  
+  postFiles.forEach((file: string) => {
+    const parts = file.split('/')
+    if (parts.length >= 4) {
+      const categorie = parts[1]
+      const yyyy = parts[2]
+      const titleDir = parts[3]
+      
+      // 去掉数字前缀 (如 "1-xxx" -> "xxx", "2-yyy" -> "yyy")
+      const cleanTitle = titleDir.replace(/^\d+-/, '')
+      
+      // 原始路径 -> 清理后的路径
+      rewrites[`posts/${categorie}/${yyyy}/${titleDir}/README.md`] = `${categorie}/${yyyy}/${cleanTitle}.md`
+    }
+  })
+  
+  return rewrites
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -80,7 +107,8 @@ export default defineConfig({
 
   // 路由重写
   rewrites: {
-    'posts/:categorie/:yyyy/:title/README.md': ':categorie/:yyyy/:title.md',
+    // 自定义函数处理标题中的数字前缀
+    ...generateRewrites(),
     'posts/:categorie/:type/index.md': ':categorie/:type.md',
     'posts/:categorie/index.md': ':categorie.md',
     'pages/:categorie/index.md': ':categorie.md'

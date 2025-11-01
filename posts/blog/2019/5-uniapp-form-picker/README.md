@@ -1,11 +1,11 @@
 ---
-title: "uniapp的Form提交之蛋疼的picker"
+title: "Uni-App的Form提交之蛋疼的picker"
 description: "uniapp的Form的picker要这样用才对"
 date: 2019-08-01 14:21:19
 tags: ["UniAPP"]
 ---
 
-# uniapp的Form提交之蛋疼的picker
+# Uni-App的Form提交之蛋疼的picker
 
 ## 思路
 

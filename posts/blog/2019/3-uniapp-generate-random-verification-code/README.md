@@ -1,11 +1,11 @@
 ---
-title: "uniapp生成随机验证码&php合成验证码图片"
+title: "Uni-App生成随机验证码&php合成验证码图片"
 description: "我搞了3天用php生成验证码，然后session返回验证码的值，这样子直接请求是可以的，但是在小程序里面是只能获取到 `PHPSESSID` ，所以要带着图片的sessionid才能访问到正确的验证码值，奈何在uniapp里面，uni.request请求才能拿到sessionid，但是image标签要想显示这个session的对应的图片，需要动态绑定数据加载，这样就导致了加载的图片请求了一次session，request又请求了一次，我技术不高写不出来了，这才想到了今天要实现的这种方法"
 date: 2019-07-11 15:06:07
 tags: ["UniAPP"]
 ---
 
-# uniapp生成随机验证码&php合成验证码图片
+# Uni-App生成随机验证码&php合成验证码图片
 
 ::: tip 背景
 我搞了3天用php生成验证码，然后session返回验证码的值，这样子直接请求是可以的，但是在小程序里面是只能获取到 `PHPSESSID` ，所以要带着图片的sessionid才能访问到正确的验证码值，奈何在uniapp里面，uni.request请求才能拿到sessionid，但是image标签要想显示这个session的对应的图片，需要动态绑定数据加载，这样就导致了加载的图片请求了一次session，request又请求了一次，我技术不高写不出来了，这才想到了今天要实现的这种方法。
