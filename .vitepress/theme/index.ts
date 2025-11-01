@@ -6,6 +6,8 @@ import DefaultTheme from 'vitepress/theme'
 import comment from './components/comment.vue'
 import imageViewer from './components/imageViewer.vue'
 import footBefore from './components/footBefore.vue'
+import { initComponent } from 'vitepress-plugin-legend/component'
+import 'vitepress-plugin-legend/dist/index.css'
 
 import './styles/index.scss'
 
@@ -56,6 +58,9 @@ export default {
   // },
 
   enhanceApp({ app, router }: EnhanceAppContext) {
+    // 注册Mermaid组件
+    initComponent(app);
+    
     if (typeof window !== 'undefined') {
       watch(
         () => router.route.data.relativePath,
@@ -64,15 +69,6 @@ export default {
       )
     }
   }
-
-  // Layout: () => {
-  //   return h(DefaultTheme.Layout, null, {
-  //     // https://vitepress.dev/guide/extending-default-theme#layout-slots
-  //   })
-  // },
-  // enhanceApp({ app, router, siteData }) {
-  //   // ...
-  // }
 } satisfies Theme
 
 if (typeof window !== 'undefined') {

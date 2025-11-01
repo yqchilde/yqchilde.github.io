@@ -1,43 +1,63 @@
 <template>
-  <div class="m-center">
-    <div class="m-con">
-      <div class="mt-8 pb-3 text-4xl" style="border-bottom: 1px solid var(--vp-c-divider);">RSS 订阅</div>
-      <div class="cursor-default inline-block mt-3 px-2 py-1 max-w-200px" :class="{
-        'bg-just-light/20': tag === state.currentName,
-      }" :key="tag" @click="collectItemInfo(tag)" v-if="state.names" v-for="(tag, idx) in state.names">
-        <span class="overflow-clip line-clamp-1">{{ tag }}</span>
+  <div class="feeds-sub-container">
+    <div class="feeds-sub-content">
+      <div class="feeds-sub-header">
+        <h1 class="feeds-sub-title">RSS 订阅</h1>
       </div>
-      <div class="pb-3 text-4xl" style="border-bottom: 1px solid var(--vp-c-divider);"></div>
+      
+      <!-- 标签过滤器 -->
+      <div class="feeds-sub-tags">
+        <span 
+          class="feeds-sub-tag" 
+          :class="{ 'active': tag === state.currentName }"
+          v-for="tag in state.names" 
+          :key="tag"
+          @click="collectItemInfo(tag)"
+        >
+          {{ tag }}
+        </span>
+      </div>
 
-      <div class="pt-5 text-lg" v-for="(items, year) in paginatedItemsByYear" :key="year">
-        <header class="pb-2">
-          <h1 class="text-2xl">{{ year }}</h1>
-        </header>
-        <div class="pl-2 md:pl-4 flex" v-for="item in items" :key="item.link">
-          <div class="basis-1/6 text-hidden line-clamp-1" :aria-label="item.date">
-            {{ dayjs(item.date).format("MM月DD日") }}
-          </div>
-          <div class="basis-4/6 text-hidden line-clamp-1">
-            <a class="cursor-default hover:bg-just-light/20 hover:text-just-dark" :href="item.link" target="_self">
-              {{ item.title }}
-            </a>
-          </div>
-          <div class="basis-2/6 text-hidden line-clamp-1">
-            {{ item.name }}
+      <!-- RSS 订阅列表 -->
+      <div class="feeds-sub-list">
+        <div class="feeds-sub-year-section" v-for="(items, year) in paginatedItemsByYear" :key="year">
+          <h2 class="feeds-sub-year">{{ year }}</h2>
+          <div class="feeds-sub-items">
+            <div class="feeds-sub-item" v-for="item in items" :key="item.link">
+              <div class="feeds-sub-date">
+                {{ dayjs(item.date).format("MM月DD日") }}
+              </div>
+              <div class="feeds-sub-title-cell">
+                <a :href="item.link" target="_blank" class="feeds-sub-link">
+                  {{ item.title }}
+                </a>
+              </div>
+              <div class="feeds-sub-source">
+                {{ item.name }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 分页控件 -->
-      <div class="flex justify-center mt-4 mb-2">
-        <div style="border: 1px dashed var(--vp-c-divider);">
-          <button class="mx-1 px-2 py-1 border rounded hover:bg-gray-200" @click="changePage(state.currentPage - 1)"
-            :disabled="state.currentPage === 1">
+      <div class="feeds-sub-pagination">
+        <div class="pagination-controls">
+          <button 
+            class="pagination-btn" 
+            @click="changePage(state.currentPage - 1)"
+            :disabled="state.currentPage === 1"
+          >
             上一页
           </button>
-          <span class="mx-2" style="align-content: center;">第 {{ state.currentPage }} 页 / 共 {{ totalPages }} 页</span>
-          <button class="mx-1 px-2 py-1 border rounded hover:bg-gray-200" @click="changePage(state.currentPage + 1)"
-            :disabled="state.currentPage === totalPages">
+          <span class="pagination-info">
+            第 {{ state.currentPage }} 页 / 共 {{ totalPages }} 页
+          </span>
+          <button 
+            class="pagination-btn" 
+            @click="changePage(state.currentPage + 1)"
+            :disabled="state.currentPage === totalPages"
+          >
             下一页
           </button>
         </div>
@@ -177,17 +197,212 @@ function changePage(page: number) {
 </script>
 
 <style scoped>
-.m-center {
-  @apply flex justify-center items-center
+.feeds-sub-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  min-height: 100vh;
 }
 
-.m-con {
-  @apply max-w-[90%] sm:w-[50%] lg:w-[70%]
+.feeds-sub-content {
+  width: 100%;
+  max-width: 1200px;
 }
 
-.text-hidden {
-  -webkit-box-orient: vertical;
+.feeds-sub-header {
+  margin-bottom: 30px;
+}
+
+.feeds-sub-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+}
+
+.feeds-sub-tags {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.feeds-sub-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--vp-c-text-2);
+  font-size: 0.9rem;
+}
+
+.feeds-sub-tag:hover {
+  background: var(--vp-c-brand-light);
+  color: var(--vp-c-brand-dark);
+}
+
+.feeds-sub-tag.active {
+  background: var(--vp-c-brand);
+  color: white;
+  border-color: var(--vp-c-brand);
+}
+
+.feeds-sub-list {
+  margin-top: 30px;
+}
+
+.feeds-sub-year-section {
+  margin-bottom: 40px;
+}
+
+.feeds-sub-year {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  color: var(--vp-c-text-1);
+}
+
+.feeds-sub-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feeds-sub-item {
+  display: grid;
+  grid-template-columns: 80px 1fr 150px;
+  gap: 20px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--vp-c-divider-light);
+  align-items: center;
+}
+
+.feeds-sub-item:last-child {
+  border-bottom: none;
+}
+
+.feeds-sub-date {
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  white-space: nowrap;
+}
+
+.feeds-sub-title-cell {
   overflow: hidden;
-  display: -webkit-inline-box;
+}
+
+.feeds-sub-link {
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.feeds-sub-link:hover {
+  color: var(--vp-c-brand);
+  text-decoration: underline;
+}
+
+.feeds-sub-source {
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feeds-sub-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--vp-c-divider);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pagination-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-brand);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  color: var(--vp-c-text-2);
+  font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .feeds-sub-item {
+    grid-template-columns: 60px 1fr 100px;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .feeds-sub-title {
+    font-size: 2rem;
+  }
+  
+  .feeds-sub-year {
+    font-size: 1.5rem;
+  }
+  
+  .feeds-sub-tags {
+    gap: 8px;
+  }
+  
+  .feeds-sub-tag {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feeds-sub-container {
+    padding: 10px;
+  }
+  
+  .feeds-sub-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    text-align: left;
+  }
+  
+  .feeds-sub-source {
+    text-align: left;
+  }
+  
+  .pagination-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 </style>

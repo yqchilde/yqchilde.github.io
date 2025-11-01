@@ -2,13 +2,13 @@
   "compilerOptions": {
     "outDir": "dist",
     "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "Node16",
+    "moduleResolution": "node16",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowJs": true,
     "strict": true,
-    "jsx": "preserve",
+    "jsx": "preserve"
   },
   "include": [
     "env.d.ts",

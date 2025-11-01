@@ -11,29 +11,33 @@ tags:
 ## 系统架构图
 
 ```mermaid
-flowchart TD
-    subgraph DataCollection[数据采集层]
-        A[自定义脚本] -->|执行采集| B[Categraf采集器]
-        B -->|输出Influx格式数据| C[VictoriaMetrics]
-    end
+---
+showToolbar: true
+---
+sequenceDiagram
+    participant 脚本 as 自定义脚本
+    participant Categraf as Categraf采集器
+    participant VM as VictoriaMetrics
+    participant 夜莺 as 夜莺v8平台
+    participant 引擎 as 告警引擎
+    participant 通知 as 通知渠道
 
-    subgraph MonitoringPlatform[监控平台层]
-        C -->|作为数据源| D[夜莺v8平台]
-        D -->|配置告警规则| E[PromQL查询引擎]
-        E -->|触发告警| F[告警引擎]
+    脚本->>Categraf: 执行数据采集
+    Categraf->>VM: 输出Influx格式数据
+    VM-->>夜莺: 提供时序数据源
+    夜莺->>夜莺: 配置告警规则
+    夜莺->>引擎: PromQL查询监控数据
+    引擎->>引擎: 规则匹配检测
+    
+    alt 触发告警条件
+        引擎->>通知: 发送告警事件
+        通知->>通知: 邮件通知
+        通知->>通知: 钉钉通知
+        通知->>通知: 企业微信通知
+        通知->>通知: Webhook通知
+    else 正常状态
+        引擎-->>夜莺: 继续监控
     end
-
-    subgraph Notification[通知层]
-        F -->|调用通知渠道| G[自定义通知配置]
-        G --> H[邮件通知]
-        G --> I[钉钉通知]
-        G --> J[企业微信通知]
-        G --> K[Webhook通知]
-    end
-
-    style DataCollection fill:#e1f5fe
-    style MonitoringPlatform fill:#f3e5f5
-    style Notification fill:#e8f5e8
 ```
 
 ## 数据流说明
@@ -46,4 +50,4 @@ flowchart TD
 
 ## Categraf
 
-categraf的文档推荐阅读，[doc](https://flashcat.cloud/docs/content/flashcat-monitor/categraf/1-introduction/)
+Categraf的文档推荐阅读，[doc](https://flashcat.cloud/docs/content/flashcat-monitor/categraf/1-introduction/)

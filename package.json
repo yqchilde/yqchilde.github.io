@@ -2,12 +2,12 @@
   "type": "module",
   "devDependencies": {
     "@arco-design/web-vue": "^2.57.0",
-    "@arco-plugins/vite-vue": "^1.4.5",
+    "@arco-plugins/vite-vue": "^1.4.6",
     "@types/blueimp-md5": "^2.18.2",
-    "@types/node": "^20.19.9",
-    "sass": "^1.89.2",
-    "unplugin-vue-components": "^0.26.0",
-    "vitepress": "^1.6.3"
+    "@types/node": "^24.9.2",
+    "sass": "^1.93.3",
+    "unplugin-vue-components": "^30.0.0",
+    "vitepress": "^1.6.4"
   },
   "scripts": {
     "docs:dev": "vitepress dev --host",
@@ -15,21 +15,24 @@
     "docs:build": "node .vitepress/theme/utils/init.data.js && vitepress build"
   },
   "dependencies": {
-    "@antv/g2plot": "^2.4.33",
+    "@antv/g2plot": "^2.4.35",
     "@giscus/vue": "^3.1.1",
-    "@mdit-vue/shared": "^2.1.4",
-    "artplayer": "^5.2.5",
+    "@mdit-vue/shared": "^3.0.2",
+    "@tailwindcss/postcss": "^4.1.16",
+    "@tailwindcss/vite": "^4.1.16",
+    "artplayer": "^5.3.0",
     "autoprefixer": "^10.4.21",
     "blueimp-md5": "^2.19.0",
     "cal-heatmap": "^4.2.4",
-    "dayjs": "^1.11.13",
+    "dayjs": "^1.11.19",
     "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
     "postcss": "^8.5.6",
     "rss-parser": "^3.13.0",
-    "tailwindcss": "^3.4.17",
-    "vite": "^5.4.19",
-    "vue": "^3.5.18"
+    "tailwindcss": "^4.1.16",
+    "vite": "^7.1.12",
+    "vitepress-plugin-legend": "^1.1.0",
+    "vue": "^3.5.22"
   },
   "pnpm": {
     "overrides": {
